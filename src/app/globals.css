@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  direction: rtl;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+    color: #f9f5f5e6;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #646ae0;
+}
+table {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+tr,
+td,
+th {
+  padding: 10px;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+.thEmployeeUser {
+  background-color: #f7f7f7;
+  color: black;
+  text-align: start;
+}
+.thDashboard {
+  background-color: #c5c1c1;
+  color: black;
+  text-align: start;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background-color: #eeeeee;
+  color: #0e1c50;
+}
+tr:nth-child(odd) {
+  background-color: #f8f3f3;
+  color: #0e1c50;
+}
+.containerTable {
+  max-height: 350px;
+  overflow-y: auto;
+}
+.containerTableDashboard {
+  max-height: 60vh;
+  min-height: 60vh;
+  overflow-y: auto;
+}
+.route {
+  transform: rotate(-55deg);
+}
+.custom-input {
+  width: 200px;
+  padding: 5px;
+
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgb(199, 198, 198);
+  font-size: 14px;
+}
+.custom-input1 {
+  padding: 7px;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgb(199, 198, 198);
+}
