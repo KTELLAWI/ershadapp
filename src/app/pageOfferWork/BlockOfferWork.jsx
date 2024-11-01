@@ -85,7 +85,8 @@ export default function BlockOfferWork({ offer }) {
             <p>{offer?.applications?.length}</p>
           </div>
         </div>
-        {user?.role === "Freelancer" ? (
+        {/* {user?.role === "Freelancer" ?  */}
+        {/* //( */}
           <div
             className="p-2 bg-NavbarBackground rounded-md font-bold text-[0.9rem] cursor-pointer text-white"
             onClick={() => {
@@ -102,9 +103,10 @@ export default function BlockOfferWork({ offer }) {
           >
             قدم الان
           </div>
-        ) : (
-          ""
-        )}
+        {/* //) 
+        //: (
+        //  "" */}
+      {/* //  )} */}
       </div>
       {openApplayOnWork && savedApplay === "offer" && <ApplayOnWork />}
     </div>

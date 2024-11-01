@@ -24,6 +24,11 @@ export default function OpenWorkBlock({ user }) {
       }
     }
   }, [user?.bio]);
+//  const filePath =user?.profilePicture ;
+
+//const fileName = filePath.split("/").pop();
+
+
   
   return (
     <div className="relative bg-bgKnowUs min-h-[280px] rouded-md pt-[70px] p-5 rounded-md">
@@ -31,6 +36,7 @@ export default function OpenWorkBlock({ user }) {
         <Avatar
           name={user?.fullName}
           imgUrl={`${url}/userImages/${user?.profilePicture}`}
+         // imgUrl={`https://backend.tellawi.rest/userImages/${fileName}`}
           width={120}
           img={user?.profilePicture}
         />
@@ -38,12 +44,16 @@ export default function OpenWorkBlock({ user }) {
       <div className="flex justify-center items-center  flex-col">
         <h1 className="font-bold text-[1.1rem]"> {user?.fullName}</h1>
         <h4 className="text-[0.9rem]"> {user?.jobTitle}</h4>
+        <h5 className="text-[0.9rem]"> {user?.phoneNumber}</h5>
+        <h5 className="text-[0.9rem]"> {user?.email}</h5>
+
       </div>
 
       <div className="flex gap-1 mt-3 items-end ">
         <div className=" text-[0.8rem] mb-10">
           <p className={`${!all ? "line-clamp-4" : ""} `} ref={bioRef}>
             {user?.bio}
+
           </p>
           {isClamped ? (
             <span
@@ -57,7 +67,7 @@ export default function OpenWorkBlock({ user }) {
           )}
         </div>
       </div>
-      <button
+      {/* <button
         className="bg-NavbarBackground p-2 rounded-md text-white font-bold w-[90%] mt-3 absolute bottom-1 left-[50%] translate-x-[-50%] "
         onClick={() => {
           setValueCv(user?.cv);
@@ -65,10 +75,10 @@ export default function OpenWorkBlock({ user }) {
         }}
       >
         السيرة الذاتية
-      </button>
-      {openIframeCv && (
+      </button> */}
+      {/* {openIframeCv && (
         <IframCv linkCv={`${url}/userImages/${valueCv}`} cv={valueCv} />
-      )}
+      )} */}
     </div>
   );
 }

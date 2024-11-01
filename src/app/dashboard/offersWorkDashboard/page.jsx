@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import ButtonPagination from "../../../../componant/Buttons/ButtonPagination";
 import { request } from "../../../../axios/axios";
 import { useQuery } from "@tanstack/react-query";
+import DownloadButton from "./DownLoadButton";
 
 export default function OfferWorksDashboard() {
   const { openDelete, setOpenDelete, setUserCurrentId, userCurrentId } =
@@ -51,7 +52,16 @@ export default function OfferWorksDashboard() {
                     {" "}
                     {jop?.description}{" "}
                   </td>
-                  <td>{jop?.applications?.length}</td>
+                  {/* <td>{jop?.applications?.length} </td> */}
+                  <td>
+  {jop?.applications?.length} {/* Show the number of applications */}
+  {jop?.applications?.length > 0 && (
+    <DownloadButton jobId ={jop?._id} />
+    // <button className="bg-blue-800 w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
+    //  > تصدير الي ملف cvs</button>
+  )}
+</td>
+
                   <td> {jop?.createdAt?.slice(0, 10)}</td>
                   <td>{jop?.createdBy?.address}</td>
                   <td> {jop?.status}</td>

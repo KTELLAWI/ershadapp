@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React, { useContext } from "react";
 import { FaUserPlus } from "react-icons/fa";
 import InputOpenWork from "../inputs/InputOpenWork";
@@ -141,7 +141,7 @@ export default function ApplayOpenWork() {
             <div className="w-full relative">
               <InputOpenWork
                 name={"city"}
-                label={"    المدينة"}
+                label={"المدينة"}
                 type={"select"}
                 option={cities}
                 validation={{

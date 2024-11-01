@@ -1,13 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: process.env.NEXT_PUBLIC_PROTOCOL,
-        hostname: process.env.NEXT_PUBLIC_IMAGE_HOSTNAME,
-        port: process.env.NEXT_PUBLIC_PORT,
-      },
-    ],
+    domains:["backend.tellawi.rest","tellawi.rest"]
+    // remotePatterns: [
+	  //   {
+    //     protocol: process.env.NEXT_PUBLIC_PROTOCOL || 'http',
+    //     hostname: "tellawi.rest",
+    //     port: process.env.NEXT_PUBLIC_PORT || '5000',
+    //   },
+    //   {
+    //     protocol: process.env.NEXT_PUBLIC_PROTOCOL || 'http',
+    //     hostname: "18.153.95.90", // Add IP address here
+    //     port: process.env.NEXT_PUBLIC_PORT || '5000', // Ensure the correct port is used
+    //   },      {
+    //     protocol: process.env.NEXT_PUBLIC_PROTOCOL || 'http',
+    //     hostname: "backend.tellawi.rest", // Add IP address here
+    //     port: process.env.NEXT_PUBLIC_PORT || '5000', // Ensure the correct port is used
+    //   },
+    // ],
   },
 };
 

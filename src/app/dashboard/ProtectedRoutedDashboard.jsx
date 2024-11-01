@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -12,5 +12,5 @@ export default function ProtectedRoutedMyDashboard({ children }) {
     }
   }, [user, router]);
 
-  return user?.role === "Admin" ? children : router.push("/");
+  return user?.role === "Admin" ? children : null;
 }
