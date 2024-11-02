@@ -108,14 +108,22 @@ export default function ApplayOnWork() {
             </div>
             <div className="w-full relative mt-5">
               <Input
-                placeholder={"    رقم الهاتف"}
+                placeholder={"   رقم الهاتف  (.....5xxx)"}
                 name={"phone"}
                 type={"text"}
                 validation={{
                   required: "رقم الهاتف مطلوب",
                   minLength: {
-                    value: 6,
-                    message: "رقم الهاتف يجب الا يقل عن 6 ارقام",
+                    value: 9,
+                    message: "رقم الهاتف يجب أن يتكون من 9 أرقام",
+                  },
+                  maxLength: {
+                    value: 9,
+                    message: "رقم الهاتف يجب ألا يتجاوز 9 أرقام",
+                  },
+                  pattern: {
+                    value: /^(5|6|7|8|9)\d{8}$/, // Matches Saudi phone numbers starting with 5-9 and followed by 8 digits
+                    message: "رقم الهاتف يجب أن يبدأ بأرقام من 5 إلى 9 ويحتوي على 9 أرقام",
                   },
                 }}
                 register={register}

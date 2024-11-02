@@ -23,18 +23,18 @@ export default function Navbar() {
     <div
       className={
         pathname === "/chooseAccount" ||
-        pathname === "/login" ||
-        pathname === "/registerEmployee" ||
-        pathname === "/registerCompany" ||
-        pathname === "/forgetPassword" ||
-        pathname.includes("/changePassword") ||
-        pathname.includes("/dashboard") ||
-        pathname === "/successChangePassword"
+          pathname === "/login" ||
+          pathname === "/registerEmployee" ||
+          pathname === "/registerCompany" ||
+          pathname === "/forgetPassword" ||
+          pathname.includes("/changePassword") ||
+          pathname.includes("/dashboard") ||
+          pathname === "/successChangePassword"
           ? "hidden"
           : ""
       }
     >
-    
+
       <div className="flex justify-between items-center px-[40px] w-[100%] h-[70px] bg-NavbarBackground">
         <div>
           <Image src={logo} alt="logo" className="w-[100px]" />
@@ -45,8 +45,8 @@ export default function Navbar() {
           </li>
           <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
           <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
-          <li onClick={() => router.push("/pageOfferWork")}> عروض العمل</li>
-          <li onClick={() => router.push("/openWork")}> المتاحين للعمل</li>
+          <li className="bg-white rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
+          {/* <li onClick={() => router.push("/openWork")}> المتاحين للعمل</li> */}
           <li onClick={() => handleScrollTo("benefits")}> المميزات</li>
 
           <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li>
@@ -62,9 +62,8 @@ export default function Navbar() {
         </div>
       </div>
       <ul
-        className={`lg:hidden flex flex-col absolute w-full mt-[1px]  gap-5 font-normal text-white cursor-pointer bg-NavbarBackground z-10 transition-all duration-500 ${
-          open ? "max-h-[500px]" : "max-h-0  overflow-hidden"
-        }`}
+        className={`lg:hidden flex flex-col absolute w-full mt-[1px]  gap-5 font-normal text-white cursor-pointer bg-NavbarBackground z-10 transition-all duration-500 ${open ? "max-h-[500px]" : "max-h-0  overflow-hidden"
+          }`}
       >
         <li
           className="font-semibold mt-5 mr-10 cursor-pointer"
@@ -86,19 +85,19 @@ export default function Navbar() {
           خدماتنا
         </li>
         <li
-          className="mr-10 cursor-pointer"
+          className="mr-10  bg-bgButtonNavbar rounded-md text-white py-2 px-3"
           onClick={() => router.push("/pageOfferWork")}
         >
           {" "}
-          عروض العمل
+          تبحث عن وظيفة
         </li>
-        <li
+        {/* <li
           className="mr-10 cursor-pointer"
           onClick={() => router.push("/openWork")}
         >
           {" "}
           المتاحين للعمل
-        </li>
+        </li> */}
 
         <li
           className="mr-10 cursor-pointer"

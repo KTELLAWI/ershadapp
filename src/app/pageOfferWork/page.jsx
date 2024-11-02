@@ -25,7 +25,7 @@ export default function PageOfferWork() {
     <>
       {jopState === "faild" && alert(error)}
       <div className="flex lg:flex-row flex-col gap-5 w-[90%] mx-auto mt-20">
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           {user?.role === "Client" ? (
             <div
               className="bg-bgPop p-3 w-fit font-bold text-gray-900 cursor-pointer lg:hidden"
@@ -92,8 +92,8 @@ export default function PageOfferWork() {
           <div>
             <SavedOffers />
           </div>
-        </div>
-        <div className="lg:w-[75%]  w-[100%]">
+        </div> */}
+        <div className="lg:w-[100%]  w-[100%] px-[10%]">
           <OfferWorks />
         </div>
       </div>

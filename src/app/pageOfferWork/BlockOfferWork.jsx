@@ -62,7 +62,7 @@ export default function BlockOfferWork({ offer }) {
       </div>
       <div className="flex justify-between items-center mt-7 text-textFilter mr-2">
         <div className="flex gap-5">
-          {idJops?.includes(offer?._id) ? (
+          {/* {idJops?.includes(offer?._id) ? (
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => handleRemoveSaved(offer?._id)}
@@ -78,7 +78,7 @@ export default function BlockOfferWork({ offer }) {
               <Image src={unSaved} alt="savedIcon" className="w-[30px]" />
               <p> حفظ</p>
             </div>
-          )}
+          )} */}
 
           <div className="flex items-center gap-2">
             <FaUser />

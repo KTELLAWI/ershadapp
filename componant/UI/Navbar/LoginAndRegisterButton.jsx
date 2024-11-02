@@ -71,15 +71,18 @@ export default function LoginAndRegisterButton() {
 
   return (
     <div className="flex gap-3 ">
-      <button className="text-white" onClick={() => router.push("/login")}>
-        تسجيل الدخول
+      <button 
+              onClick={() => router.push("/chooseAccount")}
+
+      className="text-white bg-bgButtonNavbar rounded-md py-2 px-3 transition-all duration-300 ease-in-out hover:bg-white hover:text-bgButtonNavbar">
+         تبحث عن موظفين
       </button>
-      <button
+      {/* <button
         className="bg-bgButtonNavbar rounded-md text-white py-2 px-3"
         onClick={() => router.push("/chooseAccount")}
       >
         انضم الينا
-      </button>
+      </button> */}
     </div>
   );
 }
