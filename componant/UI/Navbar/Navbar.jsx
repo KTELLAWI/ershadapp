@@ -45,7 +45,7 @@ export default function Navbar() {
           </li>
           <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
           <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
-          <li className="bg-white rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
+          <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
           {/* <li onClick={() => router.push("/openWork")}> المتاحين للعمل</li> */}
           <li onClick={() => handleScrollTo("benefits")}> المميزات</li>
 
