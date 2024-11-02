@@ -76,9 +76,9 @@ export default function LoginAndRegisterButton() {
       onClick={() => router.push("/chooseAccount")}
       onMouseEnter={() => setText("انضم الينا")} // Replace with your hover text
       onMouseLeave={() => setText("تبحث عن موظفين")}
-      className=" relative overflow-hidden text-white bg-bgButtonNavbar rounded-md py-2 px-2 group w-[135px] text-center "
+      className=" relative overflow-hidden text-white bg-bgButtonNavbar rounded-md py-2 px-2 group w-[145px] text-center "
     >
-      <span className=" relative z-10 transition-colors duration-300 ease-in-out group-hover:text-bgButtonNavbar text-md">
+      <span className=" relative z-10 transition-colors duration-300 ease-in-out font-semibold group-hover:text-bgButtonNavbar">
         {text}
       </span>
       <div className="absolute  inset-0 group-hover:bg-white transition-transform duration-500 ease-out transform translate-x-full group-hover:translate-x-0" />

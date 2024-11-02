@@ -85,11 +85,12 @@ export default function Navbar() {
           خدماتنا
         </li>
         <li
-          className="mr-10  bg-bgButtonNavbar rounded-md text-white py-2 px-3"
+          className="mr-10 rounded-md py-2 px-3"
           onClick={() => router.push("/pageOfferWork")}
         >
           {" "}
-          تبحث عن وظيفة
+          <span className=" py-1 px-2 bg-bgButtonNavbar rounded-md text-white">تبحث عن وظيفة</span>
+          
         </li>
         {/* <li
           className="mr-10 cursor-pointer"

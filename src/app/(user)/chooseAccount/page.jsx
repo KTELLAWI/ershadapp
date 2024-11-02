@@ -18,7 +18,7 @@ export default function ChooseAccount() {
             تعريف شخصية لعرض مهاراتهم وخبراتهم. يسعى &quot;إرشاد&quot; لتبسيط
             عملية التوظيف وتسهيل التواصل بين الطرفين.
           </p>
-          <div className="flex flex-col md:flex-row  justify-center gap-3 lg:gap-12 lg:items-center">
+          {/* <div className="flex flex-col md:flex-row  justify-center gap-3 lg:gap-12 lg:items-center">
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => setChooseAccount("company")}
@@ -44,15 +44,16 @@ export default function ChooseAccount() {
               </div>
               <h4 className="text-[1.1rem] font-semibold"> ابحث عن فرصة عمل</h4>
             </div>
-          </div>
+          </div> */}
           <button
             className="bg-bgButtonNavbar rounded-md text-white py-2 px-3 w-full"
             onClick={() =>
-              chooseAccount === "employee"
-                ? router.push("/registerEmployee")
-                : chooseAccount === "company"
-                ? router.push("/registerCompany")
-                : ""
+             // chooseAccount === "employee"
+               //</div> ? router.push("/registerEmployee")
+                //: chooseAccount === "company"
+                //? 
+                router.push("/registerCompany")
+                //: ""
             }
           >
             التالي
