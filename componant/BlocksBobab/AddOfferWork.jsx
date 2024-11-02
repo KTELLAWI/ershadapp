@@ -31,15 +31,15 @@ export default function AddOfferWork({ setOpenAddOffer }) {
     <div className=" fixed  top-0 left-0 w-full flex justify-center items-center h-screen bg-bgwhite">
       <div className="lg:w-[50%] w-[90%] bg-white rounded-md p-7 overflow-auto max-h-[90vh]">
         <div className="flex items-center gap-3">
-          <Avatar width={"60px"} />
-          <div>
+          {/* <Avatar width={"60px"} /> */}
+          {/* <div>
             <h1 className="text-textHeadOfferWork font-semibold">
               الشركة الوطنية السعودية
             </h1>
             <p className="text-textFilter text-[0.9rem] -mt-1">
               ahmedrashad@gmail.com
             </p>
-          </div>
+          </div> */}
         </div>
         <form method="post" onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full relative">

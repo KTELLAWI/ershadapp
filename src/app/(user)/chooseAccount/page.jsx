@@ -4,12 +4,21 @@ import chooseImage from "../../../../public/images/chooseAccount.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ContextSimple } from "../../../../context/simpleContext";
+import { IoMdHome } from "react-icons/io";
+
 export default function ChooseAccount() {
   const router = useRouter();
   const { chooseAccount, setChooseAccount } = useContext(ContextSimple);
   return (
-    <div className="bg-blue-900 h-screen flex justify-center items-center">
-      <div className="lg:w-[80%] w-[90%] bg-bgPop rounded-lg p-5 lg:p-10 flex justify-between items-center">
+    <div className="bg-blue-900 h-screen flex flex-col  justify-center items-center">
+      <div className="flex items-center gap-2 cursor-pointer group"
+      onClick={() => router.push("/")}>
+        <IoMdHome color="d3b472" size={35} 
+        
+        />
+        <h4 className="text-[1.5rem] text-bgButtonNavbar "> الرئيسية</h4>
+      </div>
+      <div className="lg:w-[80%] w-[90%] bg-bgPop mt-8 rounded-lg p-5 lg:p-10 flex justify-between items-center">
         <div className="flex flex-col gap-5 items-center lg:w-[59%]">
           <h1 className="font-bold text-[1.3rem]">اهلا بك في موقع ارشاد</h1>
           <p className="text-center leading-normal">
@@ -47,12 +56,12 @@ export default function ChooseAccount() {
           </div> */}
           <button
             className="bg-bgButtonNavbar rounded-md text-white py-2 px-3 w-full"
-            onClick={() =>
+            onClick={() => router.push("/registerCompany")
+
              // chooseAccount === "employee"
                //</div> ? router.push("/registerEmployee")
                 //: chooseAccount === "company"
                 //? 
-                router.push("/registerCompany")
                 //: ""
             }
           >

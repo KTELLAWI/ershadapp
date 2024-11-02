@@ -11,14 +11,28 @@ import { request } from "../../../../axios/axios";
 import LoadingButton from "../../../../componant/Buttons/LoadingButton";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/redux/features/userSlice";
+import { IoMdHome } from "react-icons/io";
+import { useState } from "react";
+
 export default function RegisterCompany() {
   const router = useRouter();
+  // const [fileName, setFileName] = useState("");
+
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     setFileName(file.name); // Store the file name in state
+  //   }
+  // };
+
   const {
     handleSubmit,
     watch,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  const file = watch("companyLogo")?.[0];
+
   const password = watch( "password" );
   const dispatch = useDispatch()
   async function onSubmit(data) {
@@ -57,8 +71,15 @@ export default function RegisterCompany() {
       });
   }
   return (
-    <div className="bg-blue-900 h-screen flex justify-center items-center">
-      <div className="lg:w-[80%] w-[95%] bg-bgPop rounded-lg p-5 lg:p-7 max-h-[98vh] flex gap-10 items-center relative">
+    <div className="bg-blue-900 h-screen flex flex-col justify-center items-center">
+         <div className="flex items-center gap-2 cursor-pointer group"
+      onClick={() => router.push("/")}>
+        <IoMdHome color="d3b472" size={35} 
+        
+        />
+        <h4 className="text-[1.5rem] text-bgButtonNavbar "> الرئيسية</h4>
+      </div>
+      <div className="lg:w-[80%] w-[95%] mt-8 bg-bgPop rounded-lg p-5 lg:p-7 max-h-[98vh] flex gap-10 items-center relative">
         <div className="flex flex-col gap-5 items-center lg:w-[65%] w-full pt-5  lg:p-10 p-0">
           <h1 className="font-bold text-[1.2rem]"> انشاء حساب</h1>
           <form
@@ -87,9 +108,24 @@ export default function RegisterCompany() {
                 <Input
                   type={"file"}
                   name={"companyLogo"}
-                  placeholder={" رفع شعار الشركة "}
+                  placeholder={!file? " رفع شعار الشركة ":"تم رفع الصورة"}
                   register={register}
+                    //  onChange={handleFileChange} // Update the file name on change
+        // className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
                 />
+                  {/* Display the file name if a file is selected */}
+        {/* {file  && (
+          <span className="block mt-2 text-gray-600 text-xs ">ملف مرفوع: </span>
+        )} */}
+  {/* <input
+        type="text"
+        value={fileName} // Display the file name here
+        readOnly
+        className="py-2 px-3 border rounded-md cursor-pointer" // Style to look like a file input
+        onClick={() => document.querySelector("input[type='file']").click()}
+         // Trigger file input on click
+        placeholder="رفع شعار الشركة" // Initial placeholder
+      /> */}
                 {errors.companyLogo && (
                   <p className="text-red text-[0.7rem] absolute -bottom-[17px]">
                     {errors.companyLogo.message}

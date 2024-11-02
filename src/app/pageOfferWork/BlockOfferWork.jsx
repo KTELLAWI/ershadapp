@@ -87,26 +87,26 @@ export default function BlockOfferWork({ offer }) {
         </div>
         {/* {user?.role === "Freelancer" ?  */}
         {/* //( */}
-          <div
-            className="p-2 bg-NavbarBackground rounded-md font-bold text-[0.9rem] cursor-pointer text-white"
-            onClick={() => {
-              setInformationCompanyToApplay({
-                idJop: offer?._id,
-                companyName: offer?.createdBy?.companyName,
-                companyLogo: offer?.createdBy?.companyLogo,
-                companyEmail: offer?.createdBy?.email,
-                descriptionJop: offer?.description,
-              });
-              setSavedApplay("offer");
-              setOpenApplayOnWork(true);
-            }}
-          >
-            قدم الان
-          </div>
+        {user?.role !== "Client" && user?.role !== "Admin" &&(<div
+          className="p-2 bg-NavbarBackground rounded-md font-bold text-[0.9rem] cursor-pointer text-white"
+          onClick={() => {
+            setInformationCompanyToApplay({
+              idJop: offer?._id,
+              companyName: offer?.createdBy?.companyName,
+              companyLogo: offer?.createdBy?.companyLogo,
+              companyEmail: offer?.createdBy?.email,
+              descriptionJop: offer?.description,
+            });
+            setSavedApplay("offer");
+            setOpenApplayOnWork(true);
+          }}
+        >
+          قدم الان
+        </div>)}
         {/* //) 
         //: (
         //  "" */}
-      {/* //  )} */}
+        {/* //  )} */}
       </div>
       {openApplayOnWork && savedApplay === "offer" && <ApplayOnWork />}
     </div>

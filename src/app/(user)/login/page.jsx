@@ -12,6 +12,8 @@ import { request } from "../../../../axios/axios";
 import LoadingButton from "../../../../componant/Buttons/LoadingButton";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/redux/features/userSlice";
+import { IoMdHome } from "react-icons/io";
+
 export default function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -44,8 +46,15 @@ export default function Login() {
       });
   }
   return (
-    <div className="bg-blue-900 h-screen flex justify-center items-center">
-      <div className="lg:w-[80%] w-[90%] bg-bgPop rounded-lg p-5 lg:p-10 flex gap-10 items-center relative">
+    <div className="bg-blue-900 h-screen flex flex-col justify-center items-center">
+         <div className="flex items-center gap-2 cursor-pointer group"
+      onClick={() => router.push("/")}>
+        <IoMdHome color="d3b472" size={35} 
+        
+        />
+        <h4 className="text-[1.5rem] text-bgButtonNavbar "> الرئيسية</h4>
+      </div>
+      <div className="lg:w-[80%] w-[90%] bg-bgPop mt-8 rounded-lg p-5 lg:p-10 flex gap-10 items-center relative">
         <Image
           src={logo}
           alt="logo"
