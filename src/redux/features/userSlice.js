@@ -16,6 +16,8 @@ const initialState = {
   role: "",
   skills: "",
   token: "",
+ accountStatus:false,
+
 };
 
 export const userSlice = createSlice({
@@ -37,7 +39,8 @@ export const userSlice = createSlice({
       state.jobTitle = action.payload.jobTitle || "";
       state.education = action.payload.education || "";
       state.skills = action.payload.skills || "";
-
+      state.accountStatus=action.payload.accountStatus || false;
+  
     },
     setToken: (state, action) => {
       state.token = action.payload;

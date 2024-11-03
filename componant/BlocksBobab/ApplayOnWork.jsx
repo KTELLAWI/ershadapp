@@ -50,8 +50,10 @@ export default function ApplayOnWork() {
           <Avatar
             width={60}
             name={informationCompanyToApplay?.companyName}
-            imgUrl={`${url}/userImages/${informationCompanyToApplay?.companyLogo}`}
+            imgUrl={informationCompanyToApplay?.companyLogo}
+            img={informationCompanyToApplay?.companyLogo}
           />
+           
           <div>
             <h1 className="text-textHeadOfferWork font-semibold">
               {informationCompanyToApplay?.companyName}

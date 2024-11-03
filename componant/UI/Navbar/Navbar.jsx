@@ -6,9 +6,12 @@ import { FaBars } from "react-icons/fa6";
 import LoginAndRegisterButton from "./LoginAndRegisterButton";
 import { usePathname, useRouter } from "next/navigation";
 import { scroller } from "react-scroll";
-
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const user = useSelector((state) => state?.user);
+
   const pathname = usePathname();
   const router = useRouter();
   ///////////function handleScrollTo//////////////
@@ -46,10 +49,19 @@ export default function Navbar() {
           <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
           <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
           <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
-          {/* <li onClick={() => router.push("/openWork")}> المتاحين للعمل</li> */}
           <li onClick={() => handleScrollTo("benefits")}> المميزات</li>
 
           <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li>
+          { user?.role === "Client" && user?.accountStatus === true ? 
+  <li 
+    className="bg-bgButtonNavbar font-bold rounded-md text-black shadow-md shadow-amber-200 py-2 px-3" 
+    onClick={() => router.push("/openWork")}
+  >
+    المتاحين للعمل
+  </li>
+  : <></>
+}
+
         </ul>
         <div
           className="block lg:hidden cursor-pointer"

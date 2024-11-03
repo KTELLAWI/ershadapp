@@ -93,7 +93,7 @@ export default function BlockOfferWork({ offer }) {
             setInformationCompanyToApplay({
               idJop: offer?._id,
               companyName: offer?.createdBy?.companyName,
-              companyLogo: offer?.createdBy?.companyLogo,
+              companyLogo: `${url}/userImages/${offer?.createdBy?.companyLogo}`,//offer?.createdBy?.companyLogo,
               companyEmail: offer?.createdBy?.email,
               descriptionJop: offer?.description,
             });
