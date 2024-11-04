@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import OpenWorkBlock from "./OpenWorkBlock";
 import { CiSquarePlus } from "react-icons/ci";
 
@@ -8,21 +8,36 @@ import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { request } from "../../../axios/axios";
 import LoadingButton from "../../../componant/Buttons/LoadingButton";
+import { useRouter } from "next/navigation";
+
 export default function OpenWork() {
   const { setOpenApplayOpenWork } = useContext(ContextSimple);
   const user = useSelector((state) => state?.user);
   const [page, setPage] = useState(1);
+  const router = useRouter();
+
   /////////function getAvailableWork/////////////
   function getAvailableWorkInUser() {
     return request.get(
       `/api/work/approved-freelancers?page=${page}&limit=${10}`
     );
   }
-  let { data, isLoading } = useQuery({
+  let { data, isLoading, error } = useQuery({
     queryKey: ["getAvailableWorkInUser", page],
     queryFn: () => getAvailableWorkInUser(page),
     keepPreviousData: true,
   });
+
+  // useEffect(() => {
+  //   if (error) {
+  //     router.push("/disabledaccount");
+  //   }
+  // }, [error, router]);  // return (
+    //   <div className="w-full flex max-h-screen justify-center items-center">
+    //     accont is closed
+
+    //   </div>
+    // );
   if (isLoading)
     return (
       <div className="w-full flex max-h-screen justify-center items-center">

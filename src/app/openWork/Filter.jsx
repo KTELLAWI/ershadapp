@@ -26,7 +26,10 @@ export default function Filter({
 }) {
   const [allNameJop, setAllNameJop] = useState(false);
   const [allCity, setAllCity] = useState(false);
-
+  const handleChange = (event) => {
+    setAll(false);
+    setSelectNameJop(event.target.value); // Update state on input change
+  };
   return (
     <div className="bg-bgPop w-[100%]  rounded-md p-5 text-textFilter">
       <h1 className="font-bold">التصنيفات</h1>
@@ -52,7 +55,7 @@ export default function Filter({
       <div>
         <h1 className="font-bold mt-5 text-insideTextFilter">المسمي الوظيفي</h1>
         <div className="flex flex-col gap-4 mt-3">
-          {allNameJop
+          {/* {allNameJop
             ? jobTitles?.map((title, index) => (
                 <CheckBox
                   key={index}
@@ -74,14 +77,21 @@ export default function Filter({
                     selectNameJop={selectNameJop}
                     type={"nameJop"}
                   />
-                ))}
+                ))} */}
+                 <input
+                 className="border-0 outline-none p-2 text-lg"
+      type="text"
+      value={selectNameJop} // Bind the input value to selectNameJop
+      onChange={handleChange} // Update the state on input change
+      placeholder="ادخل المسمي الوظيفي" // Placeholder text
+    />
 
-          <h1
+          {/* <h1
             className="font-bold -mt-2 text-insideTextFilter cursor-pointer"
             onClick={() => setAllNameJop((e) => !e)}
           >
             {allNameJop ? "عرض اقل" : "عرض المزيد"}
-          </h1>
+          </h1> */}
           <div className="w-full h-[1px] bg-gray-300"></div>
         </div>
       </div>

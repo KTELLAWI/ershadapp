@@ -9,7 +9,7 @@ export default function DisabledAccount() {
             <div className="absolute -bottom-[77%] left-7  w-1 h-[100%] bg-white route"></div>
           </div>
         </div>
-        <h4 className="font-bold text-[1.3rem]">الحساب غير نشط حاليا سيتم ارسال ايميل لكم عند التفعيل </h4>
+        <h4 className="font-bold text-[1.3rem]">هذا القسم غير مناح حاليا  </h4>
         <h4 className="font-bold text-[1.3rem]">ويمكنكم التواصل مع الادارة عبر الرقم التالي 05 </h4>
 
       </div>

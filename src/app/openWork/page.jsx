@@ -1,10 +1,12 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Filter from "./Filter";
 import OpenWork from "./OpenWork";
 import ApplayOpenWork from "../../../componant/BlocksBobab/ApplayOpenWork";
 import { ContextSimple } from "../../../context/simpleContext";
 import OpenWorkFilter from "./OpenWorkFilter";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 export default function OpenWorks() {
   const [openFilter, setOpenFilter] = useState(false);
@@ -19,6 +21,18 @@ export default function OpenWorks() {
   const [selectWorkNow, setSelectWorkNow] = useState(null);
   const [workInRemotly, setWorkInRemotly] = useState(null);
   const [all, setAll] = useState(true);
+  const user = useSelector((state) => state?.user);
+  const router = useRouter();
+
+  useEffect(() => {
+    //todo: endpoint to return status of client 
+    if (user?.role === "Client" && user?.accountStatus === false || user?.role != "Client") {
+      console.log("User detected, redirecting to /disabledaccount");
+      router.push("/disabledaccount");
+    }
+  }, [user, router]);
+
+
   return (
     <>
       <div className="flex lg:flex-row flex-col gap-5 w-[90%] mx-auto mt-20">

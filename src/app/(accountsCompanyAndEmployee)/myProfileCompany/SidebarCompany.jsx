@@ -48,7 +48,7 @@ export default function SidebarCompany({ setDisplayBlock }) {
             <MdSatellite color="brown" size={25} />
             <h4 className="font-semibold cursor-pointer"> عروض العمل</h4>
           </li>
-          <li
+          {/* <li
             className="flex items-center gap-2"
             onClick={() => {
               setOpenDelete(true);
@@ -57,7 +57,7 @@ export default function SidebarCompany({ setDisplayBlock }) {
           >
             <MdDelete color="#ED5A46" size={25} />
             <h4 className="font-semibold cursor-pointer"> حذف الحساب</h4>
-          </li>
+          </li> */}
           <li
             className="flex items-center gap-2"
             onClick={() => {
