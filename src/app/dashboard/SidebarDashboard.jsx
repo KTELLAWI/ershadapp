@@ -50,7 +50,7 @@ export default function SidebarDashboard({ openSidebar }) {
             <h4> حسابات الشركات</h4>
           </li>
         </div>
-        <div
+        {/* <div
           className={`${
             pathname === "/dashboard/accountsUser" ? "bg-bgHover" : ""
           } cursor-pointer  p-3`}
@@ -62,7 +62,7 @@ export default function SidebarDashboard({ openSidebar }) {
             <FaUserCog />
             <h4> حسابات المستخدمين</h4>
           </li>
-        </div>
+        </div> */}
         <div
           className={`${
             pathname === "/dashboard/offersWorkDashboard" ? "bg-bgHover" : ""

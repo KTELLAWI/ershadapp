@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains:["backend.tellawi.rest","tellawi.rest"]
+    domains:["backend.tellawi.rest","tellawi.rest","backend.ershad-sa.com","dev.ershad-sa.com","ershad-sa.com",]
     // remotePatterns: [
 	  //   {
     //     protocol: process.env.NEXT_PUBLIC_PROTOCOL || 'http',
