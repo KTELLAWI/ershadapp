@@ -5,10 +5,10 @@
 .footer {
   position: relative;
   width: 100%;
-  margin-top: 50px;
+  margin-top:200px;
   background: #0E1C50;
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,8 +34,10 @@
   font-size: 2rem;
   color: #fff;
   margin: 0 10px;
-  display: inline-block;
+  /* display: inline-block; */
   transition: 0.5s;
+  justify-content: center;
+  align-items: center;
 }
 .social-icon__link:hover {
   transform: translateY(-10px);

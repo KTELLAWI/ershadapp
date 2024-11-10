@@ -13,7 +13,7 @@ export default function Footer() {
   const pathname = usePathname();
   return (
 
-    <footer className={`bg-NavbarBackground footer mt-50 pb-10 ${pathname === "/chooseAccount" ||
+    <footer className={`bg-NavbarBackground footer  ${pathname === "/chooseAccount" ||
       pathname === "/login" ||
       pathname === "/registerEmployee" ||
       pathname === "/registerCompany" ||
