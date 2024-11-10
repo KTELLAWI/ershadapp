@@ -50,19 +50,7 @@ export default function SidebarDashboard({ openSidebar }) {
             <h4> حسابات الشركات</h4>
           </li>
         </div>
-        {/* <div
-          className={`${
-            pathname === "/dashboard/accountsUser" ? "bg-bgHover" : ""
-          } cursor-pointer  p-3`}
-          onClick={() => {
-            router.push("/dashboard/accountsUser");
-          }}
-        >
-          <li className="flex items-center gap-2 translate-x-[-20%]">
-            <FaUserCog />
-            <h4> حسابات المستخدمين</h4>
-          </li>
-        </div> */}
+     
         <div
           className={`${
             pathname === "/dashboard/offersWorkDashboard" ? "bg-bgHover" : ""

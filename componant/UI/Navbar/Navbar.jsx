@@ -8,6 +8,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { scroller } from "react-scroll";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import "./../../../src/app/globals.css";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const user = useSelector((state) => state?.user);
@@ -39,8 +41,8 @@ export default function Navbar() {
     >
 
       <div className="flex justify-between items-center px-[40px] w-[100%] h-[70px] bg-NavbarBackground">
-        <div>
-          <Image src={logo} alt="logo" className="w-[100px]" />
+        <div id="tv" className="flex items-center p-0 align-center z-100">
+          <Image src={logo} alt="logo" className="w-[100px] " />
         </div>
         <ul className="lg:flex gap-7 font-normal text-white items-center cursor-pointer hidden">
           <li className="font-semibold" onClick={() => router.push("/")}>

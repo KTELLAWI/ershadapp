@@ -1,6 +1,7 @@
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../componant/UI/Navbar/Navbar";
+import WhatsAppButton from "../../componant/Watsapp";
 import Footer from "../../componant/UI/Footer";
 import { ContextProvider } from "../../context/simpleContext";
 import StoreProvider from "./StoreProvider";
@@ -9,10 +10,10 @@ import ReactQueryProvider from "./ReactQueryProvider";
 import "react-toastify/dist/ReactToastify.css";
 const cairo = Cairo({ subsets: ["arabic"] });
 export const metadata = {
-  title: "Ershad",
+  title: "ارشاد للتوظيف",
   description: "موقع توظيف وتقديم علي وظائف",
   icons: {
-    icon: "/public/favicon.ico",
+    icon: "/images/favicon.ico",
   },
 };
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           <ContextProvider>
             <Navbar />
             <ReactQueryProvider>{children}</ReactQueryProvider>
+            <WhatsAppButton />
             <Footer />
           </ContextProvider>
         </StoreProvider>
