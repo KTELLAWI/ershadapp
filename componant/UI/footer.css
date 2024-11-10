@@ -33,11 +33,9 @@
 .social-icon__link {
   font-size: 2rem;
   color: #fff;
-  margin: 0 10px;
-  /* display: inline-block; */
+  margin: 10px 10px;
+  display: inline-block;
   transition: 0.5s;
-  justify-content: center;
-  align-items: center;
 }
 .social-icon__link:hover {
   transform: translateY(-10px);
@@ -52,6 +50,8 @@
   text-decoration: none;
   opacity: 0.75;
   font-weight: 300;
+  margin: 8px;
+  /* margin-right: 115px; */
 }
 
 .menu__link:hover {
