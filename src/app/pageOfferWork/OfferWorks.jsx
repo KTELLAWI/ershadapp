@@ -34,7 +34,7 @@ export default function OfferWorks() {
           <h1 className="font-bold text-oneTextHeader text-[1.2rem]">
             عروض العمل
           </h1>
-          {user?.role === "Client" ? (
+          {/* {user?.role === "Client" ? (
             <div
               className="flex lg:p-2 p-1 gap-3 items-center w-fit border border-NavbarBackground rounded-lg cursor-pointer"
               onClick={() => setOpenAddOffer(true)}
@@ -44,7 +44,7 @@ export default function OfferWorks() {
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         <div className="flex flex-col gap-5 mt-7">
           {data?.data?.data?.map((offer, i) => (
