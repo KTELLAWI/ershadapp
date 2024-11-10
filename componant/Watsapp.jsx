@@ -6,6 +6,7 @@ const WhatsAppButton = () => {
   const message = 'شركة ارشاد اهلا بكم'; // Replace with your custom message
 
   return (
+    <div className='z-[2000]'>
     <a
       href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
       target="_blank"
@@ -18,6 +19,7 @@ const WhatsAppButton = () => {
         className="w-10 h-10"
       />
     </a>
+    </div>
   );
 };
 
