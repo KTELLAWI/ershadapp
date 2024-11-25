@@ -51,8 +51,8 @@ export default function Navbar() {
           <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
           <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
           <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
-          <li > أرسل سيرتك الذاتية لجهات التوظيف</li>
-          {/* onClick={() => handleScrollTo("benefits")} */}
+          <li onClick={() => router.push("/sendyourcv")} > أرسل سيرتك الذاتية لجهات التوظيف</li>
+        
           <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li>
           { user?.role === "Client" &&
   <li 
@@ -116,7 +116,7 @@ export default function Navbar() {
 
         <li
           className="mr-10 cursor-pointer"
-          // onClick={() => handleScrollTo("benefits")}
+          onClick={() => router.push("/sendyourcv")}
         >
           {" "}
           أرسل سيرتك الذاتية لجهات التوظيف
