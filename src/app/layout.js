@@ -8,6 +8,8 @@ import StoreProvider from "./StoreProvider";
 import { cookies } from "next/headers";
 import ReactQueryProvider from "./ReactQueryProvider";
 import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "@/components/ui/toaster"
+
 const cairo = Cairo({ subsets: ["arabic"] });
 export const metadata = {
   title: "ارشاد للتوظيف",
@@ -26,6 +28,8 @@ export default function RootLayout({ children }) {
           <ContextProvider>
             <Navbar />
             <ReactQueryProvider>{children}</ReactQueryProvider>
+            <Toaster />
+
             <WhatsAppButton />
             <Footer />
           </ContextProvider>
