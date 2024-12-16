@@ -51,7 +51,7 @@ export default function OpenWorkFilter({
         <h1 className="font-bold text-textFilter text-[1.2rem]">
           المتاحين للعمل
         </h1>
-        <div
+        {/* <div
           className="flex lg:p-2 p-1 gap-3 items-center w-fit border border-NavbarBackground rounded-lg cursor-pointer"
           onClick={() => setOpenApplayOpenWork(true)}
         >
@@ -59,7 +59,7 @@ export default function OpenWorkFilter({
           <p className="text-[0.8rem] lg:text-[1rem]">
             طلب انضمام متاحين للعمل
           </p>
-        </div>
+        </div> */}
       </div>
       {data?.data?.data?.length > 0 ? (
         <>

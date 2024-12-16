@@ -51,19 +51,19 @@ export default function PercenticeBetween() {
         </div>
       </div>
       <div className="flex items-center gap-2 justify-between">
-        <div
+        {/* <div
           className="flex p-2  gap-3 items-center w-full border border-NavbarBackground  rounded-lg cursor-pointer"
           onClick={() => router.push("/dashboard/availablesWork/addAvailableWork")}
         >
           <CiSquarePlus />
           <p className="text-[0.8rem] lg:text-[1rem]">اضافة متاح للعمل</p>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className="flex p-2 gap-3 items-center justify-center w-full  border border-NavbarBackground rounded-lg cursor-pointer"
           onClick={() => router.push("/dashboard/accountsCompany")}
         >
           <p className="text-[0.8rem] lg:text-[1rem]"> حسابات الشركات</p>
-        </div>
+        </div> */}
       </div>
       {openWork && <ApplayOpenWork setOpenWork={setOpenWork} />}
     </div>

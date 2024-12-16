@@ -53,7 +53,7 @@ export default function Navbar() {
           <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
           <li onClick={() => router.push("/sendyourcv")} > أرسل سيرتك الذاتية لجهات التوظيف</li>
         
-          <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li>
+          {/* <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li> */}
           { user?.role === "Client" &&
   <li 
     className="bg-bgButtonNavbar font-bold rounded-md text-black shadow-md shadow-amber-200 py-2 px-3" 
@@ -121,12 +121,12 @@ export default function Navbar() {
           {" "}
           أرسل سيرتك الذاتية لجهات التوظيف
         </li>
-        <li
+        {/* <li
           className="mr-10 cursor-pointer"
           onClick={() => handleScrollTo("contactUs")}
         >
           اتصل بنا
-        </li>
+        </li> */}
         <li className="flex -mt-3 mb-5 mr-10">
           <LoginAndRegisterButton />
         </li>

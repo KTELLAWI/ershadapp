@@ -30,11 +30,11 @@ export default function MainDashboard() {
           text={" شركة "}
           num={data?.data?.clientsCount}
         />
-        <ItemBlock
+        {/* <ItemBlock
           MdBusiness={<FaUserCog size={45} color="gray" num={40} />}
           text={" مستخدم "}
           num={data?.data?.freelancersCount}
-        />
+        /> */}
         <ItemBlock
           MdBusiness={<MdOutlineLocalOffer size={45} color="gray" num={40} />}
           text={" عروض عمل "}

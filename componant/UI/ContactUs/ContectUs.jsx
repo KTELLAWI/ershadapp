@@ -5,23 +5,41 @@ import Input from "../../inputs/Input";
 import LoadingButton from "../../Buttons/LoadingButton";
 import { useForm } from "react-hook-form";
 import { request } from "../../../axios/axios";
+import { useToast } from "@/hooks/use-toast"
+
 export default function ContectUs() {
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  const { toast } = useToast()
 
   async function onSubmit(data) {
     await request
       .post("/api/contact", data)
       .then((result) => {
         if (result?.data?.message === "Message sent successfully!") {
-          alert("تم ارسال رسالتك بنجاح");
+          // alert("تم ارسال رسالتك بنجاح");
+          toast({
+            title: "تم إرسال الطلب",
+            description: "تم استلام طلبك بنجاح",
+            status: "success",
+            className: "bg-[#D3B472] text-black border-none",
+            duration: 3000, // Auto-dismiss after 5 seconds
+
+          });
         }
       })
       .catch((error) => {
-        alert(error?.response?.data?.message);
+        toast({
+          title: "خطأ في الإرسال",
+          description: error?.response?.data?.message || "An unexpected error occurred",
+          status: "error",
+          className: "bg-red text-white border-none",
+          duration: 3000, // Auto-dismiss after 5 seconds
+
+        });
       });
   }
   return (

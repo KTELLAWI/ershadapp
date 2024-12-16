@@ -59,16 +59,16 @@ export default function FilterOpenWorkDashboard({
       <div className="w-full relative">
         <InputFilterInDashboard
           name={"city"}
-          label={"المدينة"}
-          option={cities}
+          label={"الجنس"}
+          option={[ "انثى", "ذكر"]}
           setSelectCity={setSelectCity}
         />
       </div>
       <div className="w-full relative">
         <InputFilterInDashboard
-          name={"willingToRelocate"}
-          label={" المباشرة في العمل"}
-          option={["بعد ثلاثة شهور", "بعد شهرين", "بعد شهر", "فورا "]}
+          name={"currentlyEmployed"}
+          label={" هل أنت حاليا على رأس العمل"}
+          option={[ "لا", "نعم"]}
           setSelectWorkNow={setSelectWorkNow}
         />
       </div>

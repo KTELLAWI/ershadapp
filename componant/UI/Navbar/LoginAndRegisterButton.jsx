@@ -7,6 +7,7 @@ import { request, url } from "../../../axios/axios";
 import { toast } from "react-toastify";
 import { setLogout } from "@/redux/features/userSlice";
 import { resetJopSaved } from "@/redux/features/savedJopsSlice";
+import dashboardIcon from "../../../public/images/dashboardIcon.png"
 
 export default function LoginAndRegisterButton() {
   const router = useRouter();
@@ -45,23 +46,33 @@ export default function LoginAndRegisterButton() {
           {user?.profilePicture !== "" || user?.companyLogo !== "" ? (
             <Avatar
               width={45}
-              imgUrl={
-                user?.role === "Freelancer"
-                  ? `${url}/userImages/${user?.profilePicture}`
-                  : `${url}/userImages/${user?.companyLogo}`
+              imgUrl={dashboardIcon
+                // user?.role === "Freelancer"
+                //   ? `${url}/userImages/${user?.profilePicture}`
+                //   : `${url}/userImages/${user?.companyLogo}`
               }
               name={user?.role === "Client" ? user?.companyName : user?.name}
-              img={
-                user?.role === "Freelancer"
-                  ? user?.profilePicture
-                  : user?.companyLogo
+              img={dashboardIcon
+                // user?.role === "Freelancer"
+                //   ? user?.profilePicture
+                //   : user?.companyLogo
               }
             />
           ) : (
             <Avatar
-              width={45}
-              name={user?.role === "Client" ? user?.companyName : user?.name}
-            />
+            width={45}
+            imgUrl={dashboardIcon
+              // user?.role === "Freelancer"
+              //   ? `${url}/userImages/${user?.profilePicture}`
+              //   : `${url}/userImages/${user?.companyLogo}`
+            }
+            name={user?.role === "Client" ? user?.companyName : user?.name}
+            img={dashboardIcon
+              // user?.role === "Freelancer"
+              //   ? user?.profilePicture
+              //   : user?.companyLogo
+            }
+          />
           )}
         </div>
         <button className="text-white" onClick={handleLogout}>

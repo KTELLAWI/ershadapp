@@ -7,6 +7,8 @@ import { request, url } from "../../axios/axios";
 import { useForm } from "react-hook-form";
 import LoadingButton from "../Buttons/LoadingButton";
 import { useRouter } from "next/navigation";
+import logo from "../../public/images/ershadarabiclogo.png";
+
 import ApplicationsForm from "../UI/Forms/JobApplicationForm.jsx"
 export default function ApplayOnWork() {
   const {
@@ -16,32 +18,32 @@ export default function ApplayOnWork() {
 
   } = useContext(ContextSimple);
   const router = useRouter();
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm();
-  async function onSubmit(data) {
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors, isSubmitting },
+  // } = useForm();
+  // async function onSubmit(data) {
 
-    const formData = new FormData();
-    formData.append("fullName", data.fullName);
-    formData.append("phone", data.phone);
-    formData.append("jobId", informationCompanyToApplay.idJop);
-    formData.append("cv", data.cv[0]);
+  //   const formData = new FormData();
+  //   formData.append("fullName", data.fullName);
+  //   formData.append("phone", data.phone);
+  //   formData.append("jobId", informationCompanyToApplay.idJop);
+  //   formData.append("cv", data.cv[0]);
 
-    await request
-      .post("/api/application/apply", formData)
-      .then((result) => {
-        if (result?.data?.message === "Application submitted successfully") {
-          setOpenApplayOnWork(false);
-          setInformationCompanyToApplay(null);
-          router.push("/statusOrder");
-        }
-      })
-      .catch((error) => {
-        alert(error?.response?.data?.message);
-      });
-  }
+  //   await request
+  //     .post("/api/application/apply", formData)
+  //     .then((result) => {
+  //       if (result?.data?.message === "Application submitted successfully") {
+  //         setOpenApplayOnWork(false);
+  //         setInformationCompanyToApplay(null);
+  //         router.push("/statusOrder");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       alert(error?.response?.data?.message);
+  //     });
+  // }
 
   return (
     <div className=" fixed top-0 left-0 w-full flex justify-center items-center h-screen bg-bgwhite">
@@ -51,21 +53,21 @@ export default function ApplayOnWork() {
             <Avatar
               width={60}
               name={informationCompanyToApplay?.companyName}
-              imgUrl={informationCompanyToApplay?.companyLogo}
+              imgUrl={logo}
               img={informationCompanyToApplay?.companyLogo}
             />
 
             <div>
               <h1 className="text-textHeadOfferWork font-semibold">
-                {informationCompanyToApplay?.companyName}
+              ارشاد للتوظيف
               </h1>
               <p className="text-textFilter text-[0.9rem] -mt-1">
-                {informationCompanyToApplay?.companyEmail}
+                info@ershad-sa.com
               </p>
             </div>
           </div>
           <button
-            className="inline-flex items-center justify-center bg-red text-white rounded-md px-2 py-0 w-6 h-6"
+            className="inline-flex items-center justify-center bg-bgButtonNavbar text-white rounded-md px-2 py-0 w-6 h-6"
             onClick={() => {
               setOpenApplayOnWork(false);
               setInformationCompanyToApplay(null);

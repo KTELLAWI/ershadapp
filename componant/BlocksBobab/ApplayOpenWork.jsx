@@ -53,12 +53,12 @@ export default function ApplayOpenWork() {
   return (
     <div className=" fixed top-0 left-0 w-full flex justify-center items-center h-screen bg-bgwhite z-20 ">
       <div className="lg:w-[70%] w-[90%] bg-white rounded-md p-10 overflow-auto max-h-[90vh] scrollbar">
-        <div className="flex gap-3 items-center ">
+        {/* <div className="flex gap-3 items-center ">
           <FaUserPlus />
           <p className="font-bold text-NavbarBackground">
             طلب انضمام متاحين للعمل
           </p>
-        </div>
+        </div> */}
         <form
           className="flex flex-col gap-5 w-full"
           method="post"

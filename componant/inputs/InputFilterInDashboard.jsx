@@ -19,7 +19,7 @@ export default function InputFilterInDashboard({
           name === "jobTitle" ? setSelectNameJop(e.target.value) : "";
           name === "degree" ? setSelectEducation(e.target.value) : "";
           name === "city" ? setSelectCity(e.target.value) : "";
-          name === "willingToRelocate" ? setSelectWorkNow(e.target.value) : "";
+          name === "currentlyEmployed" ? setSelectWorkNow(e.target.value) : "";
           name === "canWorkRemotely" ? setWorkInRemotly(e.target.value) : "";
           name === "englishLevel" ? setSelectLevelEnglish(e.target.value) : "";
         }}

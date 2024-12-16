@@ -80,14 +80,14 @@ export default function ButtonsLast({ page, setPage, meta, refetch }) {
           </button>
         )}
       </div>
-      <button
+      {/* <button
         className=" bg-bgButtonHeader w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
         onClick={() =>
           router.push("/dashboard/availablesWork/addAvailableWork")
         }
       >
         اضافة
-      </button>
+      </button> */}
     </div>
   );
 }

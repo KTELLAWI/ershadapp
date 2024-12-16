@@ -6,6 +6,8 @@ import { url } from "../../../axios/axios";
 import { MdDelete } from "react-icons/md";
 import Delete from "../../../componant/BlocksBobab/Delete";
 import { ContextSimple } from "../../../context/simpleContext";
+import logo from "../../../public/images/ershadarabiclogo.png";
+
 export default function BlockMyOfferToApplay({ myOfferIsAppayied,page }) {
   const router = useRouter();
   const [openMore, setOpenMore] = useState(false);
@@ -18,11 +20,11 @@ export default function BlockMyOfferToApplay({ myOfferIsAppayied,page }) {
           className="flex items-center gap-1 cursor-pointer"
           onClick={() => router.push(`/myProfileCompany`)}
         >
-          <Avatar
+          {/* <Avatar
             width={40}
             name={myOfferIsAppayied?.job?.createdBy?.companyName}
-            imgUrl={`${url}/userImages/${myOfferIsAppayied?.job?.createdBy?.companyLogo}`}
-          />
+            imgUrl={logo}//{`${url}/userImages/${myOfferIsAppayied?.job?.createdBy?.companyLogo}`}
+          /> */}
           <div>
             <h1 className="text-textHeadOfferWork font-semibold text-[0.8rem]">
               {myOfferIsAppayied?.job?.createdBy?.companyName}

@@ -123,8 +123,21 @@ th {
 .thDashboard {
   background-color: #c5c1c1;
   color: black;
-  text-align: start;
+  text-align: center;
   font-weight: 600;
+  width: max-content;
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 8px; 
+}
+
+.thDashboard1 {
+  /* background-color: #c5c1c1; */
+  /* color: black; */
+  text-align: center;
+  /* font-weight: 600; */
+  width: max-;
+  white-space: nowrap; /* Prevent text from wrapping */
+  /* padding: 8px;  */
 }
 
 tr:nth-child(even) {
@@ -146,7 +159,14 @@ tr:nth-child(odd) {
   max-height: 60vh;
   min-height: 60vh;
   overflow-y: auto;
+  direction: rtl;
+  position: relative; /* Required for pseudo-element positioning */
+
 }
+
+
+
+
 
 .route {
   transform: rotate(-55deg);

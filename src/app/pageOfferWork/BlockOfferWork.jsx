@@ -11,6 +11,7 @@ import { url } from "../../../axios/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewJop, removeSavedJop } from "@/redux/features/savedJopsSlice";
 import Image from "next/image";
+import logo from "../../../public/images/ershadarabiclogo.png";
 export default function BlockOfferWork({ offer }) {
   const router = useRouter();
   const user = useSelector((state) => state?.user);
@@ -36,28 +37,36 @@ export default function BlockOfferWork({ offer }) {
     <div className="bg-bgPop p-5 rounded-lg">
       <div
         className="flex items-center gap-3 cursor-pointer"
-        onClick={() => router.push(`/profileCompany/${offer?.createdBy?._id}`)}
+        // onClick={() => router.push(`/profileCompany/${offer?.createdBy?._id}`)}
       >
         <Avatar
           width={60}
           name={offer?.createdBy?.companyName}
-          imgUrl={`${url}/userImages/${offer?.createdBy?.companyLogo}`}
-          img={offer?.createdBy?.companyLogo}
+          imgUrl={logo}//{`${url}/userImages/${offer?.createdBy?.companyLogo}`}
+          img={logo}//"/images/logo.png"
         />
         <div>
           <h1 className="text-textHeadOfferWork font-semibold">
-            {offer?.createdBy?.companyName}
+            ارشاد للتوظيف
+            {/* {offer?.createdBy?.companyName} */}
           </h1>
           <p className="text-textFilter text-[0.9rem] -mt-1">
-            {offer?.createdBy?.email}
+            info@ershad-sa.com
+            {/* {offer?.createdBy?.email} */}
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-3 mt-4 mr-2">
-        <p>{offer?.description}</p>
+      {offer?.description.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ))}
+        {/* <p className="whitespace-pre-wrap">{offer?.description}</p> */}
         <p className="text-[0.9rem]">
-          📧 أرسل سيرتك الذاتية الآن إلى {offer?.createdBy?.email} لا تفوت فرصة
-          أن تكون جزءًا من فريقنا الرائع!
+          {/* 📧 أرسل سيرتك الذاتية الآن إلى {offer?.createdBy?.email} لا تفوت فرصة
+          أن تكون جزءًا من فريقنا الرائع! */}
         </p>
       </div>
       <div className="flex justify-between items-center mt-7 text-textFilter mr-2">

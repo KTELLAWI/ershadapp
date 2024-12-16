@@ -18,11 +18,12 @@ export default function Avatar({ imgUrl, name, width, text, img }) {
           <Image
             src={imgUrl}
             alt="imgUrl"
-            className="rounded-full"
+            className="rounded-full p-1 shadow-md"
             width={width}
             height={width}
             style={{ width: width, height: width }}
             priority
+            objectFit="full"
           />
         </div>
       ) : name ? (

@@ -82,18 +82,18 @@ export default function LinesControl() {
         </div>
       </div>
       <div className="flex items-center gap-2 justify-between">
-        <div
+        {/* <div
           className="flex p-2   items-center justify-center w-full border border-NavbarBackground  rounded-lg cursor-pointer"
           onClick={() => router.push("/dashboard/accountsUser")}
         >
           <p className="text-[0.8rem] lg:text-[1rem]"> حسابات المستخدمين</p>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className="flex p-2  items-center justify-center w-full  border border-NavbarBackground rounded-lg cursor-pointer"
           onClick={() => router.push("/dashboard/offersWorkDashboard")}
         >
           <p className="text-[0.8rem] lg:text-[1rem]"> عروض العمل</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

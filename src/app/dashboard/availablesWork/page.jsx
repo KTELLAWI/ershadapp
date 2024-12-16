@@ -28,12 +28,12 @@ export default function AvailablsWork() {
             المتاحين للعمل
           </h4>
         </div>
-        <div
+        {/* <div
           className="border border-black rounded-md py-2 px-4 text-[0.9rem] cursor-pointer"
           onClick={() => router.push("/dashboard/availablesWork/requestsJoin")}
         >
           عرض طلبات الانضمام
-        </div>
+        </div> */}
       </div>
       <FilterOpenWorkDashboard
         setOpenComponantSearch={setOpenComponantSearch}
