@@ -27,13 +27,13 @@ export default function OpenWorks() {
   const user = useSelector((state) => state?.user);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   //todo: endpoint to return status of client 
-  //   if (user?.role === "Client" && user?.accountStatus === false || user?.role != "Client") {
-  //     console.log("User detected, redirecting to /disabledaccount");
-  //     router.push("/disabledaccount");
-  //   }
-  // }, [user, router]);
+  useEffect(() => {
+    //todo: endpoint to return status of client 
+    if (user?.role === "Client" && user?.accountStatus === false || user?.role != "Client") {
+      console.log("User detected, redirecting to /disabledaccount");
+      router.push("/disabledaccount");
+    }
+  }, [user, router]);
 
 
   return (
