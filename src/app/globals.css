@@ -89,6 +89,7 @@ body {
 .scrollbar::-webkit-scrollbar {
   width: 7px;
   height: 7px;
+  /* position: fixed; */
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -161,11 +162,23 @@ tr:nth-child(odd) {
   overflow-y: auto;
   direction: rtl;
   position: relative; /* Required for pseudo-element positioning */
+  user-select: none;
 
 }
 
 
+.containerTableDashboard1 {
+  direction: ltr important!;
+  user-select: none;
+   /* min-height: 60vh; */
+  min-height: 25%; 
+  /* max-height :100vh; */
+  overflow-y: scroll;
+  direction: rtl;
+  /* position: relative; */
+   /* Required for pseudo-element positioning */
 
+}
 
 
 .route {

@@ -4,7 +4,7 @@ import ButtonPagination from "../../../../componant/Buttons/ButtonPagination";
 import { useRouter } from "next/navigation";
 import { request } from "../../../../axios/axios";
 import LoadingButton from "../../../../componant/Buttons/LoadingButton";
-export default function ButtonsLast({ page, setPage, meta, refetch }) {
+export default function ButtonsLast({ page, setPage, meta, refetch ,location}) {
   const router = useRouter();
   const [viweLink, setViewLink] = useState(false);
   const [link, setLink] = useState(null);
@@ -45,12 +45,15 @@ export default function ButtonsLast({ page, setPage, meta, refetch }) {
     <div className="flex justify-between lg:flex-row flex-col items-center text-white">
       <div className="flex lg:flex-row flex-col items-center gap-2">
         <ButtonPagination page={page} setPage={setPage} meta={meta} />
-        <button
-          className=" bg-blue-800 w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
-          onClick={handleConvertExcel}
-        >
-          {loading ? <LoadingButton /> : "تصدير الي ملف cvs"}
-        </button>
+   { location !== 'company' && (
+  <button
+  className=" bg-blue-800 w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
+  onClick={handleConvertExcel}
+>
+  {loading ? <LoadingButton /> : "تصدير الي ملف cvs"}
+</button>
+   )  
+        }
         {viweLink && (
           <a
             className=" bg-red w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
@@ -59,19 +62,19 @@ export default function ButtonsLast({ page, setPage, meta, refetch }) {
             اضغط هنا للتحميل
           </a>
         )}
-        <label
-          htmlFor="cvs"
-          className=" bg-orange-600 w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
-        >
-          استيراد من ملف cvs
-        </label>
-        <input
-          type="file"
-          hidden
-          id="cvs"
-          onChange={(e) => setFile(e.target.files[0])}
-        />
-        {file && (
+       { location !== 'company' && (
+        <><label
+            htmlFor="cvs"
+            className=" bg-orange-600 w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
+          >
+            استيراد من ملف cvs
+          </label><input
+              type="file"
+              hidden
+              id="cvs"
+              onChange={(e) => setFile(e.target.files[0])} /></>
+        )}
+        {file  && (
           <button
             className=" bg-red w-fit py-[6px] px-3 rounded-md cursor-pointer mt-4"
             onClick={handleAddFile}

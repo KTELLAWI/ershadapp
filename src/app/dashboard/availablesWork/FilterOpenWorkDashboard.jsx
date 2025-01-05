@@ -11,87 +11,130 @@ import InputFilterInDashboard from "../../../../componant/inputs/InputFilterInDa
 
 export default function FilterOpenWorkDashboard({
   setOpenComponantSearch,
-  selectedYear,
-  setSelectedYear,
-  selectNameJop,
-  setSelectNameJop,
-  setectEducation,
-  setSelectEducation,
-  selectCity,
-  setSelectCity,
-  selectLevelEnglish,
-  setSelectLevelEnglish,
-  selectWorkNow,
-  setSelectWorkNow,
-  workInRemotly,
-  setWorkInRemotly,
+  currentJobTitleAr,
+  setCurrentJobTitleAr,
+  specialtyNameAr,
+  setSpecialtyNameAr,
+  qualification,
+  setQualification,
+  totalExperience,
+  setTotalExperience,
+  nationality,
+  setNationality,
+  gender,
+  setGender,
+  currentlyEmployed,
+  setCurrentlyEmployed,
 }) {
+
+  const [key, setKey] = useState(0);
+  const handleChange = (setter, event) => {
+    // setAll(false);
+    setter(event?.target.value);
+    console.log(event?.target.value)
+  };
+  // const handleChange = (event) => {
+  //   setAll(false);
+  //  // setSelectNameJop(event.target.value); // Update state on input change
+  // };
+  const handleResetFilters = () => {
+    // setAll(true);
+    setKey((prevKey) => prevKey + 1);
+
+    setCurrentJobTitleAr("");
+    setSpecialtyNameAr("");
+    setQualification("");
+    setTotalExperience("");
+    setNationality("");
+    setGender(null);
+    setCurrentlyEmployed("");
+  };
+
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(180px,1fr))] items-center lg:w-[90%] w-[95%] gap-3 mt-3">
-      <div className="w-full relative">
-        <InputFilterInDashboard
-          name={"jobTitle"}
-          label={"المسمي الوظيفي "}
-          option={jobTitles}
-          setSelectNameJop={setSelectNameJop}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 items-center w-[95%] lg:w-[90%] mx-auto mt-2">
+      {/* Job Title Input */}
+      <div className="w-full">
+        <input
+          className="border border-gray-400 w-full rounded-md p-1 outline-none"
+          type="text"
+          value={currentJobTitleAr}
+          onChange={(event) => handleChange(setCurrentJobTitleAr, event)}
+          placeholder="ادخل المسمي الوظيفي"
         />
       </div>
-      <div className="w-full relative">
-        <InputFilterInDashboard
-          name={"degree"}
-          label={"    المؤهل الدراسي "}
-          option={educations}
-          setSelectEducation={setSelectEducation}
+
+      {/* Specialty Name Input */}
+      <div className="w-full">
+        <input
+          className="border border-gray-400 w-full rounded-md p-1 outline-none"
+          type="text"
+          value={specialtyNameAr}
+          onChange={(event) => handleChange(setSpecialtyNameAr, event)}
+          placeholder="ادخل اسم التخصص باللغة العربية"
         />
       </div>
-      <div>
-        <div className="flex flex-col gap-4 mt-3">
-          <DatePicker
-            selected={selectedYear}
-            onChange={(date) => setSelectedYear(date)}
-            showYearPicker
-            dateFormat="yyyy"
-            placeholderText="اختر سنة التخرج"
-            className="custom-input1"
-          />
-        </div>
-      </div>
-      <div className="w-full relative">
-        <InputFilterInDashboard
-          name={"city"}
-          label={"الجنس"}
-          option={[ "انثى", "ذكر"]}
-          setSelectCity={setSelectCity}
+
+      {/* Total Experience Input */}
+      <div className="w-full">
+        <input
+          className="border border-gray-400 w-full rounded-md p-1 outline-none"
+          type="number"
+          value={totalExperience}
+          onChange={(event) => handleChange(setTotalExperience, event)}
+          placeholder="ادخل سنوات الخبرة"
         />
       </div>
-      <div className="w-full relative">
+
+      {/* Qualification Filter */}
+      <div className="w-full">
         <InputFilterInDashboard
-          name={"currentlyEmployed"}
-          label={" هل أنت حاليا على رأس العمل"}
-          option={[ "لا", "نعم"]}
-          setSelectWorkNow={setSelectWorkNow}
+          key={key}
+          name={qualification}
+          label="المؤهل العلمي"
+          option={["الثانوية العامة", "بكالريوس", "ماجستير", "دكتوراة"]}
+          onChange={(event) => handleChange(setQualification, event)}
         />
       </div>
-      <div className="w-full relative">
+
+      {/* Nationality Filter */}
+      <div className="w-full">
         <InputFilterInDashboard
-          name={"canWorkRemotely"}
-          label={" هل تستطيع العمل في غير مكان اقامتك"}
+          key={key}
+          name="currentlyEmployed"
+          label="الجنسية"
+          option={["سعودي", "وافد"]}
+          onChange={(event) => handleChange(setNationality, event)}
+        />
+      </div>
+
+      {/* Employment Status Filter */}
+      <div className="w-full">
+        <InputFilterInDashboard
+          key={key}
+          name=""
+          label="هل أنت حاليا على رأس العمل؟"
           option={["نعم", "لا"]}
-          setWorkInRemotly={setWorkInRemotly}
+          onChange={(event) => handleChange(setCurrentlyEmployed, event)}
         />
       </div>
-      <div className="w-full relative">
+
+      {/* Gender Filter */}
+      <div className="w-full">
         <InputFilterInDashboard
-          name={"englishLevel"}
-          label={"اللغة الانجليزية"}
-          option={["ضعيف", "متوسط", "ممتاز", "جيد", "جيد جدا"]}
-          setSelectLevelEnglish={setSelectLevelEnglish}
+          key={key}
+          name="الجنس"
+          label="الجنس"
+          option={["انثى", "ذكر"]}
+          onChange={(event) => handleChange(setGender, event)}
         />
       </div>
-      <div className="flex items-center justify-center gap-2">
+
+      {/* Buttons */}
+      <div className="flex items-center gap-2 justify-center w-full col-span-full">
         <button
-          className="bg-bgButtonNavbar px-2 py-[9px] mt-[18px] text-white rounded-md font-bold h-fit w-full"
+          className="bg-bgButtonNavbar px-3 py-1 text-white rounded-md font-bold"
           onClick={() => {
+            handleResetFilters();
             setOpenComponantSearch(false);
           }}
         >
@@ -99,15 +142,15 @@ export default function FilterOpenWorkDashboard({
         </button>
 
         <button
-          className="bg-NavbarBackground px-2 py-[9px] mt-[18px] text-white rounded-md font-bold h-fit w-full"
+          className="bg-NavbarBackground px-3 py-1 text-white rounded-md font-bold"
           onClick={() => {
-            selectedYear !== null ||
-            selectNameJop !== null ||
-            setectEducation !== null ||
-            selectCity !== null ||
-            selectLevelEnglish !== null ||
-            selectWorkNow !== null ||
-            workInRemotly !== null
+            currentJobTitleAr ||
+              specialtyNameAr ||
+              qualification ||
+              gender ||
+              nationality ||
+              currentlyEmployed ||
+              totalExperience
               ? setOpenComponantSearch(true)
               : alert("يجب اختيار بعض القيم للبحث");
           }}
@@ -117,4 +160,104 @@ export default function FilterOpenWorkDashboard({
       </div>
     </div>
   );
+
+
+
+  // return (
+  //   <div className="grid grid-cols-[repeat(auto-fit,_minmax(180px,1fr))] items-center lg:w-[90%] w-[95%] gap-1 mt-1">
+  //     <div className="w-full relative">
+  //     <input
+  //           className="border border-gray-400 w-full rounded-md p-2 outline-none scrollbar"
+  //           type="text"
+  //           value={currentJobTitleAr} // Bind the input value to selectNameJop
+  //           onChange={(event)=>handleChange(setCurrentJobTitleAr,event)} // Update the state on input change
+  //           placeholder="ادخل المسمي الوظيفي" // Placeholder text
+  //         />
+
+  //     </div>
+  //     <div className="w-full relative">
+  //     <input
+  //           className="border border-gray-400 rounded-md w-[110%] text-md p-2 outline-none scrollbar"
+  //           type="text"
+  //           value={specialtyNameAr} // Bind the input value to selectNameJop
+  //           onChange={(event)=>handleChange(setSpecialtyNameAr,event)} // Update the state on input change
+  //           placeholder="ادخل اسم التخصص باللغة العربية" // Placeholder text
+  //         />
+  //     </div>
+  //       <div className="w-full relative mr-4">
+  //       <input
+  //           className="border border-gray-400 w-full mr-2 rounded-md p-2 outline-none scrollbar"
+  //           type="number"
+  //           value={totalExperience} // Bind the input value to selectNameJop
+  //           onChange={(event)=>handleChange(setTotalExperience,event)} // Update the state on input change
+  //           placeholder="ادخل سنوات الخبرة " // Placeholder text
+  //         />
+  //     </div>
+  //     <div className="w-full relative mr-6  " >
+  //       <InputFilterInDashboard
+  //         name={"city"}
+  //         label={"المؤهل العلمي"}
+  //         option={ ["الثانوية العامة", "بكالريوس", "ماجستير", "دكتوراة"]}
+  //         onChange={(event)=>handleChange(setQualification,event)} // Update the state on input change
+  //         />
+  //     </div>
+  //     <div className="w-full relative mt-3 mt-3">
+  //       <InputFilterInDashboard
+  //         name={"currentlyEmployed"}
+  //         label={" الجنسية"}
+  //         option={["سعودي", "وافد"]}
+  //         // setSelectWorkNow={setSelectWorkNow}
+  //         onChange={(event)=>handleChange(setNationality,event)}
+  //       />
+  //     </div>
+  //     <div className="w-[105%]  mr-2 relative mt-3">
+  //       <InputFilterInDashboard
+  //         name={""}
+  //         label={"هل أنت حاليا على رأس العمل؟"}
+  //         option={["نعم", "لا"]}
+  //         onChange={(event)=>handleChange(setCurrentlyEmployed,event)} // Update the state on input change
+
+  //         // setWorkInRemotly={setWorkInRemotly}
+  //       />
+  //     </div>
+  //     <div className="w-full relative mr-5 mt-3">
+  //     <InputFilterInDashboard
+  //         name={"الجنس"}
+  //         label={"الجنس"}
+  //         option={[ "انثى", "ذكر"]}
+  //         // setGender={setGender}
+  //         onChange={(event)=>handleChange(setGender,event)}
+
+  //       />
+  //     </div>
+  //     <div className="flex items-center mr-5 justify-center gap-2">
+  //       <button
+  //         className="bg-bgButtonNavbar  px-2 py-[9px] mt-[18px] text-white rounded-md font-bold h-fit w-full"
+  //         onClick={() => {
+  //           handleResetFilters(); 
+  //           setOpenComponantSearch(false);
+  //         }}
+  //       >
+  //         الكل
+  //       </button>
+
+  //       <button
+  //         className="bg-NavbarBackground px-2 py-[9px] mt-[18px] text-white rounded-md font-bold h-fit w-full"
+  //         onClick={() => {
+  //           currentJobTitleAr !== null ||
+  //           specialtyNameAr !== null ||
+  //           qualification !== null ||
+  //           gender !== null ||
+  //           nationality !== null ||
+  //           currentlyEmployed !== null ||
+  //           totalExperience !== null
+  //             ? setOpenComponantSearch(true)
+  //             : alert("يجب اختيار بعض القيم للبحث");
+  //         }}
+  //       >
+  //         بحث
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 }

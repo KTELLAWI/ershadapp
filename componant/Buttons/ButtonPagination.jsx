@@ -16,11 +16,10 @@ export default function ButtonPagination({ page, setPage, meta }) {
           Array.from({ length: meta?.totalPages }).map((e, i) => (
             <div
               key={i}
-              className={`p-1 px-4 ${
-                page === i + 1
-                  ? "bg-bgButtonPaginationActive"
-                  : "bg-bgButtonPagination"
-              }  text-white font-bold rounded-md cursor-pointer`}
+              className={`p-1 px-4 ${page === i + 1
+                ? "bg-bgButtonPaginationActive"
+                : "bg-bgButtonPagination"
+                }  text-white font-bold rounded-md cursor-pointer`}
               onClick={() => setPage(i + 1)}
             >
               {i + 1}
@@ -31,26 +30,55 @@ export default function ButtonPagination({ page, setPage, meta }) {
             {Array.from({ length: 2 }).map((e, i) => (
               <div
                 key={i}
-                className={`p-1 px-4 ${
-                  page === i + 1
-                    ? "bg-bgButtonPaginationActive"
-                    : "bg-bgButtonPagination"
-                }  text-white font-bold rounded-md cursor-pointer`}
+                className={`p-1 px-4 ${page === i + 1
+                  ? "bg-black"
+                  : "bg-bgButtonPagination"
+                  }  text-white font-bold rounded-md cursor-pointer`}
                 onClick={() => setPage(i + 1)}
               >
                 {i + 1}
               </div>
             ))}
             <div
-              className={`p-1 px-4 ${
-                page > 2
-                  ? "bg-bgButtonPaginationActive"
-                  : "bg-bgButtonPagination"
-                  }  text-white font-bold rounded-md cursor-pointer min-h-[30px]` }
-                 
+
+              onClick={() => (meta?.totalPages > page ? setPage((e) => e + 1) : "")}
+              className={`p-1 px-4 ${page > 2
+                ? "bg-black" //"bg-bgButtonPaginationActive"
+                : "bg-bgButtonPagination"
+                }  text-white font-bold rounded-md cursor-pointer min-h-[30px]`}
+
             >
-              {page > 2 ? page : ""}
+              {page > 2 ? `${page}  >>  ` : " المزيد"}
             </div>
+
+            <div className="text-black">
+              .............
+            </div>
+
+            {/* <div
+
+              onClick={() => (meta?.totalPages > page ? setPage((e) => e + 1) : "")}
+              className={`p-1 px-4 ${page > 2
+                ? "bg-black" //"bg-bgButtonPaginationActive"
+                : "bg-bgButtonPagination"
+                }  text-white font-bold rounded-md cursor-pointer min-h-[30px]`}
+
+            >
+                
+              
+            </div> */}
+            <div
+
+              // onClick={() => (meta?.totalPages > page ? setPage((e) => e + 1) : "")}
+              className={`p-0 px-0 
+
+
+    text-black font-bold rounded-md cursor-pointer min-h-[30px]`}
+
+            >
+              {meta?.totalPages}
+            </div>
+
           </div>
         )}
       </div>

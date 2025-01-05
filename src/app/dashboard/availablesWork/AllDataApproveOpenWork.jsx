@@ -132,7 +132,7 @@ import Delete from "../../../../componant/BlocksBobab/Delete";
 import { ContextSimple } from "../../../../context/simpleContext";
 import { useRouter } from "next/navigation";
 
-export default function AllDataApproveOpenWork() {
+export default function AllDataApproveOpenWork({location}) {
   const {
     openDelete,
     setOpenDelete,
@@ -148,7 +148,7 @@ export default function AllDataApproveOpenWork() {
   /////////function getAvailableWork/////////////
   function getAvailableWorkِApprove() {
     return request.get(
-      `/api/work/approved-freelancers?page=${page}&limit=${25}`
+      `/api/work/approved-freelancers?page=${page}&limit=${50}`
     );
   }
   let { data, refetch } = useQuery({
@@ -158,7 +158,7 @@ export default function AllDataApproveOpenWork() {
   });
   return (
     <div className="bg-bgTableDashboard rounded-md p-5 mt-10">
-      <div   className="containerTableDashboard scrollbar px-2">
+      <div   className="containerTableDashboard1 scrollbar px-2 ">
         <table>
           <thead>
             <tr>
@@ -177,8 +177,7 @@ export default function AllDataApproveOpenWork() {
               <th className="thDashboard"> هل أنت حاليا على رأس العمل</th>
               {/* <th className="thDashboard"> أبرز مهاراتك ومجال خبراتك في العمل</th> */}
               <th className="thDashboard">السيرة الذاتية </th>
-              <th className="thDashboard"> اجراءات</th>
-            </tr>
+              {  location!== "company" && (<th className="thDashboard"> اجراءات</th>)}            </tr>
           </thead>
           <tbody>
             {data?.data?.data?.map((e, i) => (
@@ -216,7 +215,7 @@ export default function AllDataApproveOpenWork() {
                   {/* {" "}
                   فتح */}
                 </td>
-              
+                {  location!== "company" && (
                 <td className="flex items-center gap-2">
                   <p
                     className="border border-NavbarBackground w-fit py-1 px-2 rounded-md cursor-pointer"
@@ -236,6 +235,7 @@ export default function AllDataApproveOpenWork() {
                     حذف
                   </p>
                 </td>
+                )}
               </tr>
             ))}
           </tbody>
@@ -246,6 +246,7 @@ export default function AllDataApproveOpenWork() {
         setPage={setPage}
         meta={data?.data?.meta}
         refetch={refetch}
+        location={location}
       />
       {openDelete && (
         <Delete

@@ -23,7 +23,7 @@ export default function PageOfferWork() {
   }, [dispatch, jopState, user?._id]);
   return (
     <>
-      {jopState === "faild" && alert(error)}
+      {/* {jopState === "faild" && alert(error)} */}
       <div className="flex lg:flex-row flex-col gap-5 w-[90%] mx-auto mt-20">
         {/* <div className="flex items-center gap-3">
           {user?.role === "Client" ? (

@@ -10,13 +10,13 @@ import DataOpenWorkFromFilter from "./DataOpenWorkFromFilter";
 //
 export default function AvailablsWork() {
   const router = useRouter();
-  const [selectedYear, setSelectedYear] = useState(null);
-  const [selectNameJop, setSelectNameJop] = useState(null);
-  const [setectEducation, setSelectEducation] = useState(null);
-  const [selectCity, setSelectCity] = useState(null);
-  const [selectLevelEnglish, setSelectLevelEnglish] = useState(null);
-  const [selectWorkNow, setSelectWorkNow] = useState(null);
-  const [workInRemotly, setWorkInRemotly] = useState(null);
+   const [currentJobTitleAr, setCurrentJobTitleAr] = useState(null);
+   const [currentlyEmployed, setCurrentlyEmployed] = useState(null);
+   const [specialtyNameAr, setSpecialtyNameAr] = useState(null);
+   const [qualification, setQualification] = useState(null);
+   const [totalExperience, setTotalExperience] = useState(null);
+   const [nationality, setNationality] = useState(null);
+   const [gender, setGender] = useState(null);
   const [openComponantSearch, setOpenComponantSearch] = useState(false);
   return (
     <div className="lg:mt-10 mt-14">
@@ -37,31 +37,33 @@ export default function AvailablsWork() {
       </div>
       <FilterOpenWorkDashboard
         setOpenComponantSearch={setOpenComponantSearch}
-        selectedYear={selectedYear}
-        setSelectedYear={setSelectedYear}
-        selectNameJop={selectNameJop}
-        setSelectNameJop={setSelectNameJop}
-        setectEducation={setectEducation}
-        setSelectEducation={setSelectEducation}
-        selectCity={selectCity}
-        setSelectCity={setSelectCity}
-        selectLevelEnglish={selectLevelEnglish}
-        setSelectLevelEnglish={setSelectLevelEnglish}
-        selectWorkNow={selectWorkNow}
-        setSelectWorkNow={setSelectWorkNow}
-        workInRemotly={workInRemotly}
-        setWorkInRemotly={setWorkInRemotly}
+        currentJobTitleAr={currentJobTitleAr}
+        setCurrentJobTitleAr={setCurrentJobTitleAr}
+        currentlyEmployed={currentlyEmployed}
+        setCurrentlyEmployed={setCurrentlyEmployed}
+        specialtyNameAr={specialtyNameAr}
+        setSpecialtyNameAr={setSpecialtyNameAr}
+        qualification={qualification}
+        setQualification={setQualification}
+        totalExperience={totalExperience}
+        setTotalExperience={setTotalExperience}
+        nationality={nationality}
+        setNationality={setNationality}
+        gender={gender}
+        setGender={setGender}
+    
       />
       {openComponantSearch ? (
-        <DataOpenWorkFromFilter
-          selectLevelEnglish={selectLevelEnglish}
-          selectedYear={selectedYear}
-          selectNameJop={selectNameJop}
-          setectEducation={setectEducation}
-          selectCity={selectCity}
-          selectWorkNow={selectWorkNow}
-          workInRemotly={workInRemotly}
-        />
+       <DataOpenWorkFromFilter
+                     currentJobTitleAr={currentJobTitleAr}
+                     currentlyEmployed={currentlyEmployed}
+                     specialtyNameAr={specialtyNameAr}
+                     qualification={qualification}
+                     totalExperience={totalExperience}
+                     nationality={nationality}
+                     gender={gender}
+                     location=""
+                   />
       ) : (
         <AllDataApproveOpenWork />
       )}

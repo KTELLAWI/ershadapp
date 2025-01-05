@@ -9,13 +9,14 @@ import { ContextSimple } from "../../../../context/simpleContext";
 import LoadingButton from "../../../../componant/Buttons/LoadingButton";
 import { useRouter } from "next/navigation";
 export default function DataOpenWorkFromFilter({
-  selectLevelEnglish,
-  selectedYear,
-  selectNameJop,
-  setectEducation,
-  selectCity,
-  selectWorkNow,
-  workInRemotly,
+  currentJobTitleAr,
+  currentlyEmployed,
+  gender,
+  qualification,
+  nationality,
+  specialtyNameAr,
+  totalExperience,
+  location
 }) {
   const {
     openDelete,
@@ -32,20 +33,20 @@ export default function DataOpenWorkFromFilter({
   /////////function getAvailableWork  Filter in dashboard/////////////
   function getAvailableWorkFilterInDashboard() {
     return request.get(
-      `/api/work/approved-freelancers?englishLevel=${selectLevelEnglish}&jobTitle=${selectNameJop}&city=${selectCity}&degree=${setectEducation}&willingToRelocate=${selectWorkNow}&canWorkRemotely=${workInRemotly}&graduationYear=${selectedYear?.getFullYear()}&page=${page}&limit=${10}`
+      `/api/work/approved-freelancers?currentJobTitleAr=${currentJobTitleAr}&specialtyNameAr=${specialtyNameAr}&qualification=${qualification}&currentlyEmployed=${currentlyEmployed}&gender=${gender}&nationality=${nationality}&totalExperience=${totalExperience}&page=${page}&limit=${100}`
     );
   }
   let { data, isLoading } = useQuery({
     queryKey: [
       "getAvailableWorkFilterInDashboard",
       page,
-      selectLevelEnglish,
-      selectNameJop,
-      selectCity,
-      setectEducation,
-      selectWorkNow,
-      workInRemotly,
-      selectedYear,
+      currentJobTitleAr,
+  currentlyEmployed,
+  gender,
+  qualification,
+  nationality,
+  specialtyNameAr,
+  totalExperience,
     ],
     queryFn: () => getAvailableWorkFilterInDashboard(page),
     keepPreviousData: true,
@@ -65,7 +66,7 @@ export default function DataOpenWorkFromFilter({
   return (
     <div className="bg-bgTableDashboard rounded-md p-5 mt-10">
       <div className="containerTableDashboard scrollbar px-2">
-        <table>
+        {/* <table>
           <thead>
             <tr>
               <th className="thDashboard"> الاسم كامل</th>
@@ -133,9 +134,91 @@ export default function DataOpenWorkFromFilter({
               </tr>
             ))}
           </tbody>
+        </table> */}
+        <table>
+          <thead>
+            <tr>
+              <th className="thDashboard"> الاسم كامل</th>
+              <th className="thDashboard">المسمى الوظيفي الحالي باللغة الانجليزية</th>
+              <th className="thDashboard">المسمى الوظيفي الحالي باللغة العربية</th>
+              <th className="thDashboard">اسم التخصص باللغة العربية</th>
+              <th className="thDashboard">المؤهل</th>
+              <th className="thDashboard">اسم الجامعة</th>
+              <th className="thDashboard"> سنوات الخبرة في مجال التخصص</th>
+              <th className="thDashboard"> سنوات الخبرة بشكل عام وإجمالي</th>
+              <th className="thDashboard">الجنسية</th>
+              <th className="thDashboard">بريدالإلكتروني </th>
+              <th className="thDashboard">الجوال</th>
+              <th className="thDashboard">  الجنس</th>
+              <th className="thDashboard"> هل أنت حاليا على رأس العمل</th>
+              {/* <th className="thDashboard"> أبرز مهاراتك ومجال خبراتك في العمل</th> */}
+              <th className="thDashboard">السيرة الذاتية </th>
+              {  location!== "company" && (<th className="thDashboard"> اجراءات</th>)}            </tr>
+          </thead>
+          <tbody>
+            {data?.data?.data?.map((e, i) => (
+              <tr key={i} className="cursor-pointer">
+                <td className="thDashboard1" > {e?.fullName}</td>
+                <td className="thDashboard1" > {e?.currentJobTitleEn}</td>
+                <td className="thDashboard1" >{e?.currentJobTitleAr}</td>
+                <td className="thDashboard1" > {e?.specialtyNameAr}</td>
+                <td className="thDashboard1" > {e?.qualification}</td>
+                <td className="thDashboard1"> {e?.universityName}</td>
+                <td className="thDashboard1">{e?.specialtyExperience}</td>
+                <td className="thDashboard1">{e?.totalExperience}</td>
+                <td className="thDashboard1">{e?.nationality}</td>
+
+                <td className="thDashboard1">{e?.email}</td>
+
+                <td className="thDashboard1">{e?.phoneNumber}</td>
+
+                <td className="thDashboard1">{e?.gender}</td>
+                
+                <td className="thDashboard1">{e?.currentlyEmployed}</td>
+                
+                {/* <td>{e?.skills}</td> */}
+                {/* <td>{e?.resume}</td> */}
+
+                
+
+                <td className="thDashboard1"
+                  // onClick={() => {
+                  //   // setValueCv(e?.resume);
+                  //   // setOpenIframeCv(true);
+                  // }}
+                >
+                  <a href={e.resume} target="true">فتح</a>
+                  {/* {" "}
+                  فتح */}
+                </td>
+                {  location!== "company" && (
+                <td className="flex items-center gap-2">
+                  <p
+                    className="border border-NavbarBackground w-fit py-1 px-2 rounded-md cursor-pointer"
+                    onClick={() =>
+                      router.push(`/dashboard/availablesWork/${e?._id}`)
+                    }
+                  >
+                    عرض
+                  </p>
+                  <p
+                    className="border border-rose-700 w-fit py-1 px-2 rounded-md cursor-pointer"
+                    onClick={() => {
+                      setUserCurrentId(e?._id);
+                      setOpenDelete(true);
+                    }}
+                  >
+                    حذف
+                  </p>
+                </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
-      <ButtonsLast page={page} setPage={setPage} meta={data?.data?.meta} />
+      <ButtonsLast page={page} setPage={setPage} meta={data?.data?.meta}  location={location}
+ />
       {openDelete && (
         <Delete
           header={"حذف المستخدم"}

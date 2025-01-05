@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import logo from "../../../public/images/logo.png";
+import logoWhite from "../../../public/images/ershadarabiclogowhite.png";
 import { IoMdHome } from "react-icons/io";
 import { MdBusiness } from "react-icons/md";
 import { FaUserCog } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { MdOutlineLocalOffer } from "react-icons/md";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import { usePathname, useRouter } from "next/navigation";
+
 export default function SidebarDashboard({ openSidebar }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function SidebarDashboard({ openSidebar }) {
       } lg:right-[0] min-w-[300px] w-[25%] bg-NavbarBackground min-h-screen  flex-col lg:gap-10 items-center py-7 text-white transition-all duration-200`}
     >
       <div className="flex justify-center">
-        <Image src={logo} alt="logo" className="w-[120px] mb-10 " />
+        <Image src={logoWhite} alt="logo" className="w-[50px] mb-5 z-8 " />
       </div>
 
       <ul className="flex flex-col gap-3 w-full">

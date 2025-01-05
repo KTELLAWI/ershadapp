@@ -10,6 +10,8 @@ export default function StoreProvider({ children, token }) {
     storeRef.current = makeStore();
   }
   useEffect(() => {
+    console.log("Token on refresh:", token);
+
     if (token) {
       const decoded = jwtDecode(token);
       const currentTime = Date.now() / 1000;
@@ -20,10 +22,14 @@ export default function StoreProvider({ children, token }) {
           storeRef.current.dispatch(setUser(JSON.parse(informUser)));
         }
       } else {
-        localStorage.removeItem("informUser");
+       localStorage.removeItem("informUser");
       }
     } else {
-      localStorage.removeItem("informUser");
+      const informUser = localStorage.getItem("informUser");
+      if (informUser) {
+        storeRef.current.dispatch(setUser(JSON.parse(informUser)));
+      }
+    //localStorage.removeItem("informUser");
     }
   }, [token]);
   return <Provider store={storeRef.current}>{children}</Provider>;
