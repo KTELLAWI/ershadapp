@@ -33,10 +33,10 @@ export default function RegisterCompany() {
   } = useForm();
   const file = watch("companyLogo")?.[0];
 
-  const password = watch( "password" );
+  const password = watch("password");
   const dispatch = useDispatch()
   async function onSubmit(data) {
-    
+
     const formData = new FormData();
     formData.append("companyName", data.companyName);
     formData.append("contact", data.contact);
@@ -57,9 +57,13 @@ export default function RegisterCompany() {
             "informUser",
             JSON.stringify(result?.data?.user)
           );
+          localStorage.setItem(
+            "token",
+            JSON.stringify(result?.data?.token)
+          );
           dispatch(setUser(result?.data?.user));
           toast.success("تم انشاء الحساب بنجاح");
-          router.replace("/");
+          window.location.href = "/myProfileCompany";
         }
       })
       .catch((error) => {
@@ -72,10 +76,10 @@ export default function RegisterCompany() {
   }
   return (
     <div className="bg-blue-900 h-screen flex flex-col justify-center items-center">
-         <div className="flex items-center gap-2 cursor-pointer group"
-      onClick={() => router.push("/")}>
-        <IoMdHome color="d3b472" size={35} 
-        
+      <div className="flex items-center gap-2 cursor-pointer group"
+        onClick={() => router.push("/")}>
+        <IoMdHome color="d3b472" size={35}
+
         />
         <h4 className="text-[1.5rem] text-bgButtonNavbar "> الرئيسية</h4>
       </div>
@@ -108,16 +112,16 @@ export default function RegisterCompany() {
                 <Input
                   type={"file"}
                   name={"companyLogo"}
-                  placeholder={!file? " رفع شعار الشركة ":"تم رفع الصورة"}
+                  placeholder={!file ? " رفع شعار الشركة " : "تم رفع الصورة"}
                   register={register}
-                    //  onChange={handleFileChange} // Update the file name on change
-        // className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                //  onChange={handleFileChange} // Update the file name on change
+                // className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
                 />
-                  {/* Display the file name if a file is selected */}
-        {/* {file  && (
+                {/* Display the file name if a file is selected */}
+                {/* {file  && (
           <span className="block mt-2 text-gray-600 text-xs ">ملف مرفوع: </span>
         )} */}
-  {/* <input
+                {/* <input
         type="text"
         value={fileName} // Display the file name here
         readOnly

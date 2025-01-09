@@ -216,15 +216,15 @@ export default function AllDataApproveOpenWork({location}) {
                   فتح */}
                 </td>
                 {  location!== "company" && (
-                <td className="flex items-center gap-2">
-                  <p
+                <td className="flex items-center gap-2 justify-center">
+                  {/* <p
                     className="border border-NavbarBackground w-fit py-1 px-2 rounded-md cursor-pointer"
                     onClick={() =>
                       router.push(`/dashboard/availablesWork/${e?._id}`)
                     }
                   >
                     عرض
-                  </p>
+                  </p> */}
                   <p
                     className="border border-rose-700 w-fit py-1 px-2 rounded-md cursor-pointer"
                     onClick={() => {

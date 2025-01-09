@@ -7,7 +7,7 @@ import jobTitles from "../../../helpers/jobTitles";
 import educations from "../../../helpers/educations";
 import cities from "../../../helpers/cities";
 export default function Filter({
-   all,
+  all,
   setAll,
   currentJobTitleAr,
   setCurrentJobTitleAr,
@@ -23,11 +23,10 @@ export default function Filter({
   setGender,
   currentlyEmployed,
   setCurrentlyEmployed,
-})
- {
+}) {
   const [allNameJop, setAllNameJop] = useState(false);
   const [allCity, setAllCity] = useState(false);
-    const handleChange=(setter,event) =>{
+  const handleChange = (setter, event) => {
     setAll(false);
     setter(event?.target.value);
   };
@@ -35,22 +34,23 @@ export default function Filter({
   //   setAll(false);
   //  // setSelectNameJop(event.target.value); // Update state on input change
   // };
-    const handleResetFilters = () => {
+  const handleResetFilters = () => {
     setAll(true);
     setCurrentJobTitleAr("");
     setSpecialtyNameAr("");
     setQualification(null);
     setTotalExperience("");
-    setNationality(null);
+    setNationality("");
     setGender(null);
     setCurrentlyEmployed(null);
   };
-  
+
   return (
     <div className="bg-bgPop w-[100%]  rounded-md p-5 text-textFilter">
       <h1 className="font-bold">التصنيفات</h1>
       <div
-        onClick={() => {handleResetFilters();
+        onClick={() => {
+          handleResetFilters();
           // console.log(currentJobTitleAr)
           // setCurrentJobTitleAr(null);
           // console.log(currentJobTitleAr)
@@ -80,7 +80,7 @@ export default function Filter({
             className="border-1 rounded-sm outline-none p-1 text-md"
             type="text"
             value={currentJobTitleAr} // Bind the input value to selectNameJop
-            onChange={(event)=>handleChange(setCurrentJobTitleAr,event)} // Update the state on input change
+            onChange={(event) => handleChange(setCurrentJobTitleAr, event)} // Update the state on input change
             placeholder="ادخل المسمي الوظيفي" // Placeholder text
           />
           <div className="w-full h-[1px] bg-gray-300"></div>
@@ -103,28 +103,28 @@ export default function Filter({
         </div>
       </div>
       <div>
-      <h1 className="font-bold mt-5 text-insideTextFilter">اسم التخصص باللغة العربية</h1>
+        <h1 className="font-bold mt-5 text-insideTextFilter">اسم التخصص باللغة العربية</h1>
         <div className="flex flex-col gap-4 mt-3">
 
           <input
             className="border-1 rounded-sm outline-none p-1 text-md"
             type="text"
             value={specialtyNameAr} // Bind the input value to selectNameJop
-            onChange={(event)=>handleChange(setSpecialtyNameAr,event)} // Update the state on input change
+            onChange={(event) => handleChange(setSpecialtyNameAr, event)} // Update the state on input change
             placeholder="ادخل اسم التخصص باللغة العربية" // Placeholder text
           />
           <div className="w-full h-[1px] bg-gray-300"></div>
         </div>
       </div>
       <div>
-      <h1 className="font-bold mt-5 text-insideTextFilter">سنوات الخبرة بشكل عام وإجمالي</h1>
+        <h1 className="font-bold mt-5 text-insideTextFilter">سنوات الخبرة بشكل عام وإجمالي</h1>
         <div className="flex flex-col gap-4 mt-3">
 
           <input
             className="border-1 rounded-sm outline-none p-1 text-md"
             type="number"
             value={totalExperience} // Bind the input value to selectNameJop
-            onChange={(event)=>handleChange(setTotalExperience,event)} // Update the state on input change
+            onChange={(event) => handleChange(setTotalExperience, event)} // Update the state on input change
             placeholder="ادخل سنوات الخبرة " // Placeholder text
           />
           <div className="w-full h-[1px] bg-gray-300"></div>
@@ -132,11 +132,18 @@ export default function Filter({
       </div>
       <div>
         <h1 className="font-bold mt-5 text-insideTextFilter">
-          {" "}
-          
+          ادخل المدينة
+
         </h1>
         <div className="flex flex-col gap-4 mt-3">
-          {["سعودي", "وافد"]?.map((level, index) => (
+          <input
+            className="border-1 rounded-sm outline-none p-1 text-md"
+            type="text"
+            value={currentJobTitleAr} // Bind the input value to selectNameJop
+            onChange={(event) => handleChange(setNationality, event)} // Update the state on input change
+            placeholder="المدينة" // Placeholder text
+          />
+          {/* {["سعودي", "وافد"]?.map((level, index) => (
             <CheckBox
               text={level}
               key={index}
@@ -145,7 +152,7 @@ export default function Filter({
               nationality={nationality}
               setNationality={setNationality}
             />
-          ))}
+          ))} */}
 
           <div className="w-full h-[1px] bg-gray-300"></div>
         </div>

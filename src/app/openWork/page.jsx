@@ -33,7 +33,7 @@ export default function OpenWorks() {
       console.log("User detected, redirecting to /disabledaccount");
       router.push("/disabledaccount");
     }
-  }, [user, router]);
+  }, [ router]);
 
 
   return (

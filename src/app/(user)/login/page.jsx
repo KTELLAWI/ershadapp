@@ -2,8 +2,8 @@
 import React from "react";
 import chooseImage from "../../../../public/images/chooseAccount.png";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { redirect, useRouter } from "next/navigation";
+import  {toast}  from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../../componant/inputs/Input";
 import logo from "../../../../public/images/logo.png";
@@ -28,14 +28,28 @@ export default function Login() {
       .post("/api/user/login", data)
       .then((result) => {
         if (result?.data?.message === "Login successfully") {
+          
           localStorage.setItem(
             "informUser",
             JSON.stringify(result?.data?.user)
           );
+          localStorage.setItem(
+            "token",
+            JSON.stringify(result?.data?.token)
+          );
+
           dispatch(setUser(result?.data?.user));
-          toast.success("تم   تسجيل الدخول بنجاح");
-          router.replace("/");
-        }
+          // alert("تم   تسجيل الدخول بنجاح");
+          if (result?.data?.user?.role === "Admin")
+          {
+            window.location.href = "/dashboard/mainDashboard";
+          }
+          else {
+            window.location.href = "/myProfileCompany"; 
+          } 
+         
+          
+         }
       })
       .catch((error) => {
         if (error?.response?.data?.message === "Invalid email or password") {

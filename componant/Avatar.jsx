@@ -12,7 +12,7 @@ export default function Avatar({ imgUrl, name, width, text, img }) {
     }
   }
   return (
-    <div className="flex flex-col justify-center items-center gap-2 cursor-pointer">
+    <div className="flex flex-col justify-center items-center gap-2 cursor-pointer bg-white shadow-black  shadow-lg rounded-full">
       {img ? (
         <div className="flex flex-col justify-center items-center gap-1">
           <Image

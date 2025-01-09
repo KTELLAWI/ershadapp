@@ -20,7 +20,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const token = cookies().get("jwtErshad")?.value || "";
+  const token = cookies().get("jwtErshad")?.value  || "";
   return (
     <html lang="en">
       <body className={cairo.className}>

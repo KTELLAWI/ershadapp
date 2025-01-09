@@ -456,9 +456,19 @@ export default function JobApplicationForm(props) {
 
             {/* Nationality */}
             <div>
-                <label className="block mb-2">* الجنسية</label>
+                <label className="block mb-2">* المدينة</label>
                 <div className="relative">
-                    <Select dir="rtl"
+                <Input
+                        value={formData.nationality}
+                        onChange={(e) => handleChange('nationality', e.target.value)}
+                        placeholder=""
+                    />
+                    {errors.nationality && (
+                        <p className="text-red font-bold text-sm absolute -bottom-5">
+                            {errors.nationality}
+                        </p>
+                    )}
+                    {/* <Select dir="rtl"
                         onValueChange={(value) => handleChange('nationality', value)}
                         value={formData.nationality}
                     >
@@ -474,7 +484,7 @@ export default function JobApplicationForm(props) {
                         <p className="text-red font-bold text-sm absolute -bottom-5">
                             {errors.nationality}
                         </p>
-                    )}
+                    )} */}
                 </div>
             </div>
 

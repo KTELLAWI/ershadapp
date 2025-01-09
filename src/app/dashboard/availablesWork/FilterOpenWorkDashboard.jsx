@@ -98,13 +98,20 @@ export default function FilterOpenWorkDashboard({
 
       {/* Nationality Filter */}
       <div className="w-full">
-        <InputFilterInDashboard
+        <input
+          className="border border-gray-400 w-full rounded-md p-1 outline-none"
+          type="text"
+          value={specialtyNameAr}
+          onChange={(event) => handleChange(setNationality, event)}
+          placeholder="المدينة"
+        />
+        {/* <InputFilterInDashboard
           key={key}
           name="currentlyEmployed"
           label="الجنسية"
           option={["سعودي", "وافد"]}
           onChange={(event) => handleChange(setNationality, event)}
-        />
+        /> */}
       </div>
 
       {/* Employment Status Filter */}

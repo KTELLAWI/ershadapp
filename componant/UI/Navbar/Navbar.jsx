@@ -45,13 +45,19 @@ export default function Navbar() {
           <Image src={logo} alt="logo" className="w-[100px] " />
         </div>
         <ul className="lg:flex gap-7 font-normal text-white items-center cursor-pointer hidden">
-          <li className="font-semibold" onClick={() => router.push("/")}>
+         {
+          user?.role !="Client" && ( 
+          <>
+            <li className="font-semibold" onClick={() => router.push("/")}>
             الصفحة الرئيسية
           </li>
           <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
           <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
           <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
           <li onClick={() => router.push("/sendyourcv")} > أرسل سيرتك الذاتية لجهات التوظيف</li>
+          </>
+          )
+         }
 
           {/* <li onClick={() => handleScrollTo("contactUs")}>اتصل بنا</li> */}
           {user?.role === "Client" &&
