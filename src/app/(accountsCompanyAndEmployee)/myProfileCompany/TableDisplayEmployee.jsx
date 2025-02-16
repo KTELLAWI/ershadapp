@@ -23,6 +23,7 @@ export default function TableDisplayEmployee({
     valueCv,
     setValueCv,
   } = useContext(ContextSimple);
+  console.log("applications",applications);
   return (
     <div
       className={`bg-bgTable rounded-lg p-5 mt-5  ${
@@ -58,14 +59,18 @@ export default function TableDisplayEmployee({
                 <td> {apply?.fullName}</td>
                 <td>{apply.phone}</td>
                 <td
+                
                   onClick={(e) => {
+                    window.open(`https://backend.ershad-sa.com/userImages/${apply?.resume}`, "_blank");
                     e.stopPropagation();
-                    setValueCv(apply?.cv);
-                    setOpenIframeCv(true);
+                    // setValueCv(apply?.resume);
+                    // setOpenIframeCv(true);
                   }}
                 >
+                  
                   <p className="bg-white py-1 px-2 w-fit cursor-pointer">
                     معاينة
+                     {/* <a href={`https://backend.ershad-sa.com/userImages/${apply?.resume}`} target="true">معاينة</a> */}
                   </p>
                 </td>
                 <td

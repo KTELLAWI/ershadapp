@@ -29,11 +29,11 @@ export default function OpenWorks() {
 
   useEffect(() => {
     //todo: endpoint to return status of client 
-    if (user?.role === "Client" && user?.accountStatus === false || user?.role != "Client") {
+    if (user?.role === "Client" && user?.accountStatus === false ) {
       console.log("User detected, redirecting to /disabledaccount");
       router.push("/disabledaccount");
     }
-  }, [ router]);
+  }, [ router,user]);
 
 
   return (

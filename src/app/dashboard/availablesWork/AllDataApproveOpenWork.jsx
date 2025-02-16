@@ -207,13 +207,13 @@ export default function AllDataApproveOpenWork({location}) {
 
                 <td className="thDashboard1"
                   // onClick={() => {
-                  //   // setValueCv(e?.resume);
-                  //   // setOpenIframeCv(true);
+                  //   setValueCv(e?.resume);
+                  //   setOpenIframeCv(true);
                   // }}
                 >
-                  <a href={e.resume} target="true">فتح</a>
-                  {/* {" "}
-                  فتح */}
+                   <a href={e.resume} target="true">فتح</a>
+                  {/* {" "} */}
+                  {/* فتح */}
                 </td>
                 {  location!== "company" && (
                 <td className="flex items-center gap-2 justify-center">
