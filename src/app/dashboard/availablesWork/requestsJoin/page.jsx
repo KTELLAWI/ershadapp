@@ -31,26 +31,26 @@ export default function RequestsJoin() {
         status: statusType,
       })
       .then((result) => {
-          console.log( 'new',result );
-          if (
-            result?.data?.message === "work status updated to تم الموافقة" ||
-            result?.data?.message === "work status updated to تم رفضه"
-          ) {
-                  queryClient.setQueryData(
-                    ["getAvailableWorkPendding", page],
-                      ( oldData ) => {
-                        console.log('old',oldData)
-                      const newData = oldData?.data?.data.filter(
-                        (user) => user._id !== id
-                      );
-                      return {
-                        ...oldData,
-                        data: { ...oldData.data, data: newData },
-                      };
-                    }
-                  );
-          }
-        
+        console.log('new', result);
+        if (
+          result?.data?.message === "work status updated to تم الموافقة" ||
+          result?.data?.message === "work status updated to تم رفضه"
+        ) {
+          queryClient.setQueryData(
+            ["getAvailableWorkPendding", page],
+            (oldData) => {
+              console.log('old', oldData)
+              const newData = oldData?.data?.data.filter(
+                (user) => user._id !== id
+              );
+              return {
+                ...oldData,
+                data: { ...oldData.data, data: newData },
+              };
+            }
+          );
+        }
+
       })
       .catch((error) => alert(error?.response?.data?.message));
   }
@@ -77,7 +77,7 @@ export default function RequestsJoin() {
                 <th className="thDashboard">البريد الالكترونى </th>
                 <th className="thDashboard">رقم الهويه </th>
                 <th className="thDashboard"> اللقب</th>
-                <th className="thDashboard"> المدينة</th>
+                <th className="thDashboard"> المنطقة</th>
                 <th className="thDashboard">السيرة الذاتية </th>
                 <th className="thDashboard">اللغة الانجليزية </th>
                 <th className="thDashboard"> المؤهل الدراسي</th>

@@ -132,7 +132,7 @@ export default function Filter({
       </div>
       <div>
         <h1 className="font-bold mt-5 text-insideTextFilter">
-          ادخل المدينة
+          ادخل المنطقة
 
         </h1>
         <div className="flex flex-col gap-4 mt-3">
@@ -141,7 +141,7 @@ export default function Filter({
             type="text"
             value={currentJobTitleAr} // Bind the input value to selectNameJop
             onChange={(event) => handleChange(setNationality, event)} // Update the state on input change
-            placeholder="المدينة" // Placeholder text
+            placeholder="المنطقة" // Placeholder text
           />
           {/* {["سعودي", "وافد"]?.map((level, index) => (
             <CheckBox
@@ -309,7 +309,7 @@ export default function Filter({
 //       </div>
 
 //       <div>
-//         <h1 className="font-bold mt-5 text-insideTextFilter"> الجنسية</h1>
+//         <h1 className="font-bold mt-5 text-insideTextFilter"> المنطقة</h1>
 //         <div className="flex flex-col gap-4 mt-3">
 //           {["سعودي", "وافد"].map((item, index) => (
 //             <CheckBox

@@ -22,7 +22,7 @@ export default function Home() {
       <KnowUs />
       <Services />
       <OffersWork />
-      <BenefitsWebsits />
+      {/* <BenefitsWebsits /> */}
       <ContectUs />
     </>
   );

@@ -145,11 +145,11 @@ export default function OpenWorkDynaminDashboard({ params }) {
           <div className="w-full relative">
             <InputOpenWork
               name={"city"}
-              label={"    المدينة"}
+              label={"    المنطقة"}
               type={"select"}
               option={cities}
               validation={{
-                required: "   المدينة  مطلوب",
+                required: "   المنطقة  مطلوب",
               }}
               register={register}
             />

@@ -113,7 +113,7 @@ export default function JobApplicationForm(props) {
         }
 
         if (!formData.nationality) {
-            newErrors.nationality = 'الجنسية مطلوبة';
+            newErrors.nationality = 'المنطقة مطلوبة';
         }
 
         if (!formData.email) {
@@ -456,9 +456,9 @@ export default function JobApplicationForm(props) {
 
             {/* Nationality */}
             <div>
-                <label className="block mb-2">* المدينة</label>
+                <label className="block mb-2">* المنطقة</label>
                 <div className="relative">
-                <Input
+                    <Input
                         value={formData.nationality}
                         onChange={(e) => handleChange('nationality', e.target.value)}
                         placeholder=""

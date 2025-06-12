@@ -11,7 +11,7 @@ import { request } from "../../axios/axios";
 import { ContextSimple } from "../../context/simpleContext";
 import { useRouter } from "next/navigation";
 export default function ApplayOpenWork() {
-  const { setOpenApplayOpenWork } = useContext( ContextSimple );
+  const { setOpenApplayOpenWork } = useContext(ContextSimple);
   const router = useRouter()
   //
   const {
@@ -141,11 +141,11 @@ export default function ApplayOpenWork() {
             <div className="w-full relative">
               <InputOpenWork
                 name={"city"}
-                label={"المدينة"}
+                label={"المنطقة"}
                 type={"select"}
                 option={cities}
                 validation={{
-                  required: "   المدينة  مطلوب",
+                  required: "   المنطقة  مطلوب",
                 }}
                 register={register}
               />
@@ -336,7 +336,7 @@ export default function ApplayOpenWork() {
                 required: "النبذة التعريفية مطلوبة",
                 minLength: {
                   value: 100,
-                  message:"يجب الا يقل عن 100 حرف"
+                  message: "يجب الا يقل عن 100 حرف"
                 }
               }}
             />

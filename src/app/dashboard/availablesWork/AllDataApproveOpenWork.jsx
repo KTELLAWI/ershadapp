@@ -16,7 +16,7 @@
 //     setUserCurrentId,
 //     userCurrentId,
 //   } = useContext(ContextSimple);
-  
+
 //   const router = useRouter();
 //   const [valueCv, setValueCv] = useState(null);
 //   const [page, setPage] = useState(1);
@@ -43,7 +43,7 @@
 //               <th className="thDashboard">البريد الالكترونى </th>
 //               <th className="thDashboard">رقم الهويه </th>
 //               <th className="thDashboard"> اللقب</th>
-//               <th className="thDashboard"> المدينة</th>
+//               <th className="thDashboard"> المنطقة</th>
 //               <th className="thDashboard">السيرة الذاتية </th>
 //               <th className="thDashboard">اللغة الانجليزية </th>
 //               <th className="thDashboard"> المؤهل الدراسي</th>
@@ -112,9 +112,9 @@
 //           textButton={"حذف المستخدم"}
 //           state={"deleteOpenWorkDashboard"}
 //           api={`/api/work/delete-join/${userCurrentId}`}
-          
+
 //           keyFunction={["getAvailableWorkِApprove", page]}
-       
+
 //         />
 //       )}
 //       {openIframeCv && (
@@ -132,7 +132,7 @@ import Delete from "../../../../componant/BlocksBobab/Delete";
 import { ContextSimple } from "../../../../context/simpleContext";
 import { useRouter } from "next/navigation";
 
-export default function AllDataApproveOpenWork({location}) {
+export default function AllDataApproveOpenWork({ location }) {
   const {
     openDelete,
     setOpenDelete,
@@ -158,7 +158,7 @@ export default function AllDataApproveOpenWork({location}) {
   });
   return (
     <div className="bg-bgTableDashboard rounded-md p-5 mt-10">
-      <div   className="containerTableDashboard1 scrollbar px-2 ">
+      <div className="containerTableDashboard1 scrollbar px-2 ">
         <table>
           <thead>
             <tr>
@@ -170,14 +170,14 @@ export default function AllDataApproveOpenWork({location}) {
               <th className="thDashboard">اسم الجامعة</th>
               <th className="thDashboard"> سنوات الخبرة في مجال التخصص</th>
               <th className="thDashboard"> سنوات الخبرة بشكل عام وإجمالي</th>
-              <th className="thDashboard">الجنسية</th>
+              <th className="thDashboard">المنطقة</th>
               <th className="thDashboard">بريدالإلكتروني </th>
               <th className="thDashboard">الجوال</th>
               <th className="thDashboard">  الجنس</th>
               <th className="thDashboard"> هل أنت حاليا على رأس العمل</th>
               {/* <th className="thDashboard"> أبرز مهاراتك ومجال خبراتك في العمل</th> */}
               <th className="thDashboard">السيرة الذاتية </th>
-              {  location!== "company" && (<th className="thDashboard"> اجراءات</th>)}            </tr>
+              {location !== "company" && (<th className="thDashboard"> اجراءات</th>)}            </tr>
           </thead>
           <tbody>
             {data?.data?.data?.map((e, i) => (
@@ -197,27 +197,27 @@ export default function AllDataApproveOpenWork({location}) {
                 <td className="thDashboard1">{e?.phoneNumber}</td>
 
                 <td className="thDashboard1">{e?.gender}</td>
-                
+
                 <td className="thDashboard1">{e?.currentlyEmployed}</td>
-                
+
                 {/* <td>{e?.skills}</td> */}
                 {/* <td>{e?.resume}</td> */}
 
-                
+
 
                 <td className="thDashboard1"
-                  // onClick={() => {
-                  //   setValueCv(e?.resume);
-                  //   setOpenIframeCv(true);
-                  // }}
+                // onClick={() => {
+                //   setValueCv(e?.resume);
+                //   setOpenIframeCv(true);
+                // }}
                 >
-                   <a href={e.resume} target="true">فتح</a>
+                  <a href={e.resume} target="true">فتح</a>
                   {/* {" "} */}
                   {/* فتح */}
                 </td>
-                {  location!== "company" && (
-                <td className="flex items-center gap-2 justify-center">
-                  {/* <p
+                {location !== "company" && (
+                  <td className="flex items-center gap-2 justify-center">
+                    {/* <p
                     className="border border-NavbarBackground w-fit py-1 px-2 rounded-md cursor-pointer"
                     onClick={() =>
                       router.push(`/dashboard/availablesWork/${e?._id}`)
@@ -225,16 +225,16 @@ export default function AllDataApproveOpenWork({location}) {
                   >
                     عرض
                   </p> */}
-                  <p
-                    className="border border-rose-700 w-fit py-1 px-2 rounded-md cursor-pointer"
-                    onClick={() => {
-                      setUserCurrentId(e?._id);
-                      setOpenDelete(true);
-                    }}
-                  >
-                    حذف
-                  </p>
-                </td>
+                    <p
+                      className="border border-rose-700 w-fit py-1 px-2 rounded-md cursor-pointer"
+                      onClick={() => {
+                        setUserCurrentId(e?._id);
+                        setOpenDelete(true);
+                      }}
+                    >
+                      حذف
+                    </p>
+                  </td>
                 )}
               </tr>
             ))}

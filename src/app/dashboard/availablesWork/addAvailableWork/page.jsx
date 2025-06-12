@@ -22,7 +22,7 @@ export default function AddAvailableWork() {
   } = useForm();
 
   async function onSubmit(data) {
-    
+
     const formData = new FormData();
     formData.append("fullName", data.fullName);
     formData.append("email", data.email);
@@ -143,11 +143,11 @@ export default function AddAvailableWork() {
           <div className="w-full relative">
             <InputOpenWork
               name={"city"}
-              label={"    المدينة"}
+              label={"    المنطقة"}
               type={"select"}
               option={cities}
               validation={{
-                required: "   المدينة  مطلوب",
+                required: "   المنطقة  مطلوب",
               }}
               register={register}
             />

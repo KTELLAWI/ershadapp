@@ -14,12 +14,12 @@ const [play,setPlay] = useState(false)
         {/* Text Section */}
         <div className="flex flex-col gap-5 lg:w-[40%] w-full text-center lg:text-left">
           <h1 className="text-black text-center bg-white bg-opacity-40 font-bold text-[1.8rem] lg:text-[2rem]">
-            ارشاد للموارد البشرية
+            منصة ارشاد للتوظيف  
           </h1>
-          <p className="bg-white text-right  bg-opacity-40 text-black font-bold p-4 rounded-lg">
-            نواصل السعی لإضافة قیمة إلى المواهب البشریة ومساعدتهم على جلب أفضل
+          <p className=" text-right  text-black font-bold p-4 rounded-lg">
+            {/* نواصل السعی لإضافة قیمة إلى المواهب البشریة ومساعدتهم على جلب أفضل
             مهاراتهم وسلوکیاتهم إلى العالم المهنی. نسعى الى بناء الثقة فی قدرة
-            الفرد على القیام بعمله.
+            الفرد على القیام بعمله. */}
           </p>
         </div>
 

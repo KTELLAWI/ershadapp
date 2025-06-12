@@ -103,12 +103,12 @@ export default function FilterOpenWorkDashboard({
           type="text"
           value={specialtyNameAr}
           onChange={(event) => handleChange(setNationality, event)}
-          placeholder="المدينة"
+          placeholder="المنطقة"
         />
         {/* <InputFilterInDashboard
           key={key}
           name="currentlyEmployed"
-          label="الجنسية"
+          label="المنطقة"
           option={["سعودي", "وافد"]}
           onChange={(event) => handleChange(setNationality, event)}
         /> */}
@@ -211,7 +211,7 @@ export default function FilterOpenWorkDashboard({
   //     <div className="w-full relative mt-3 mt-3">
   //       <InputFilterInDashboard
   //         name={"currentlyEmployed"}
-  //         label={" الجنسية"}
+  //         label={" المنطقة"}
   //         option={["سعودي", "وافد"]}
   //         // setSelectWorkNow={setSelectWorkNow}
   //         onChange={(event)=>handleChange(setNationality,event)}
