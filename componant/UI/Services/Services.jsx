@@ -6,7 +6,7 @@ import serviceThree from "../../../public/images/service3.jpeg";
 
 export default function Services() {
   return (
-    <div className="mt-20 lg:w-[75%] w-[90%] mx-auto" id="services">
+    <div className="mt-20 lg:w-[90%] w-[90%] mx-auto" id="services">
       <div className="flex justify-center font-bold text-[1.6rem]">
         <h1> خدماتنا</h1>
       </div>

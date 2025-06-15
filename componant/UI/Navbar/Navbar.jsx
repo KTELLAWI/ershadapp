@@ -9,6 +9,7 @@ import { scroller } from "react-scroll";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./../../../src/app/globals.css";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,13 @@ export default function Navbar() {
   ///////////function handleScrollTo//////////////
   function handleScrollTo(sectionTo) {
     if (pathname === "/") {
+      setOpen((e) => !e)
       scroller.scrollTo(sectionTo);
+      
     } else {
+        setOpen((e) => !e);
       router.push(`/?scrollTo=${sectionTo}`);
+    
     }
   }
   return (
@@ -40,19 +45,26 @@ export default function Navbar() {
       }
     >
 
-      <div className="flex justify-between items-center px-[40px] w-[100%] h-[70px] bg-NavbarBackground">
+      <div className="flex justify-between items-center px-[40px] w-[100%] h-[70px] bg-transparent">
         <div id="tv" className="flex items-center p-0 align-center z-100">
-          <Image src={logo} alt="logo" className="w-[100px] " />
+          
+          <Link href="/" className="" prefetch={false}> 
+          <Image  onClick={() =>{ router.push("/ourservice");
+          setOpen((e) => !e);
+         } } src={logo} alt="logo" className="w-[100px] " />
+         </Link>
         </div>
-        <ul className="lg:flex gap-7 font-normal text-white items-center cursor-pointer hidden">
+        <ul className="lg:flex gap-7 font-normal text-black items-center cursor-pointer hidden">
          {
           user?.role !="Client" && ( 
           <>
             <li className="font-semibold" onClick={() => router.push("/")}>
             الصفحة الرئيسية
           </li>
-          <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li>
-          <li onClick={() => handleScrollTo("services")}> خدماتنا</li>
+          {/* <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li> */}
+          <li onClick={() => {router.push("/ourservice");
+            setOpen((e) => !e);
+          }}> خدماتنا</li>
           <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
           <li onClick={() => router.push("/sendyourcv")} > أرسل سيرتك الذاتية لجهات التوظيف</li>
           </>
@@ -75,41 +87,45 @@ export default function Navbar() {
           className="block lg:hidden cursor-pointer"
           onClick={() => setOpen((e) => !e)}
         >
-          <FaBars color="white" size={30} />
+          <FaBars color="bgButtonNavbar" size={30} />
         </div>
         <div className="lg:flex hidden ">
           <LoginAndRegisterButton />
         </div>
       </div>
       <ul
-        className={`lg:hidden flex flex-col absolute w-full mt-[1px]  gap-5 font-normal text-white cursor-pointer bg-NavbarBackground z-10 transition-all duration-500 ${open ? "max-h-[500px]" : "max-h-0  overflow-hidden"
+        className={`lg:hidden flex flex-col   absolute w-[95%] mt-[1px] shadow-md gap-6 rounded-md font-normal text-black  cursor-pointer left-1/2 transform -translate-x-1/2 bg-white z-[1000] transition-all duration-500 ${open ? "max-h-[500px]" : "max-h-0  overflow-hidden"
           }`}
       >
         <li
           className="font-semibold mt-5 mr-10 cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => {
+            setOpen((e) => !e);
+            router.push("/");
+          }}
         >
           الصفحة الرئيسية
         </li>
+      
         <li
           className="mr-10 cursor-pointer"
-          onClick={() => handleScrollTo("knowUs")}
-        >
-          تعرف علينا
-        </li>
-        <li
-          className="mr-10 cursor-pointer"
-          onClick={() => handleScrollTo("services")}
+         onClick={() =>{ router.push("/ourservice");
+          setOpen((e) => !e);
+         }}
         >
           {" "}
           خدماتنا
         </li>
         <li
-          className="mr-10 rounded-md py-2 px-3"
-          onClick={() => router.push("/pageOfferWork")}
+          className="mr-10 rounded-md py-2 "
+          onClick={() => {
+            setOpen((e) => !e);
+            router.push("/pageOfferWork")
+          }}
         >
           {" "}
-          <span className=" py-1 px-2 bg-bgButtonNavbar rounded-md text-white">تبحث عن وظيفة</span>
+          تبحث عن وظيفة
+          {/* <span className=" py-1 px-2 bg-bgButtonNavbar rounded-md text-white">تبحث عن وظيفة</span> */}
 
         </li>
         {/* <li
@@ -122,20 +138,23 @@ export default function Navbar() {
 
         <li
           className="mr-10 cursor-pointer"
-          onClick={() => router.push("/sendyourcv")}
+          onClick={() => {setOpen((e) => !e);
+            router.push("/sendyourcv")}}
         >
           {" "}
           أرسل سيرتك الذاتية لجهات التوظيف
         </li>
-        {/* <li
-          className="mr-10 cursor-pointer"
-          onClick={() => handleScrollTo("contactUs")}
+        <li
+          className="mr-10 cursor-pointer mb-2"
+           onClick={() => {setOpen((e) => !e);
+            router.push("/chooseAccount")}}
         >
-          اتصل بنا
-        </li> */}
-        <li className="flex -mt-3 mb-5 mr-10">
-          <LoginAndRegisterButton />
+          تبحث عن موظفين
         </li>
+        {/* <li className="flex -mt-3 mb-5 mr-10 ">
+
+          <LoginAndRegisterButton />
+        </li> */}
       </ul>
     </div>
   );

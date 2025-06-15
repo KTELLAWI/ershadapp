@@ -43,7 +43,7 @@ export default function ContectUs() {
       });
   }
   return (
-    <div className="bg-bgContactUs py-10 mt-20" id="contactUs">
+    <div className=" py-10 mt-8" id="contactUs">
       <div className="flex justify-between lg:w-[80%] w-[90%] mx-auto items-center">
         <div className="flex flex-col gap-7 lg:w-[55%]">
           <div>

@@ -15,11 +15,11 @@ export default function ServiceBlock({image,alt,header,paragraph}) {
   </div>
 
   {/* Content Section */}
-  <div className="p-6 flex flex-col items-center bg-white rounded-b-lg">
-    <h1 className="text-2xl z-[300] font-semibold text-gray-800 mb-2 group-hover:text-white transition-colors duration-300">
+  <div className="p-6 flex flex-col items-center bg-white rounded-b-lg flex-1">
+    <h1 className="text-2xl z-[300] font-semibold text-black mb-2 group-hover:text-white transition-colors duration-300">
       {header}
     </h1>
-    <p className="text-sm z-[30] text-gray-600 group-hover:text-white transition-colors duration-300">
+    <p className="text-sm z-[30] flex-1 text-black group-hover:text-white transition-colors duration-300">
       {paragraph}
     </p>
   </div>
