@@ -92,7 +92,7 @@ export default function AnimatedBeamDemo() {
             </Circle>
           </div>
           <div className="flex flex-col w-[50%] items-start">
-            <h3 className="text-sm font-semibold mt-2 break-normal">تصنيف سيرتك ضمن  <br />المسارات   المهنية الصناعية</h3>
+            <h3 className="text-sm font-semibold mt-2 break-normal">تصنيف سيرتك ضمن  <br />المسارات   المهنية </h3>
             <p className="text-xs text-gray-500"></p>
           </div>
         </div>

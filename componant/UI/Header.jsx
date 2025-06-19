@@ -23,7 +23,7 @@ import HeroVideoDialog  from "@/components/magicui/hero-video-dialog";
 
 const videos = [
   { title: 'مقابلات التوظيف', color: 'bg-[#c5b68b]', src:'/images/employmentDay.mp4' },
-  { title: 'معرض النجاحات', color: 'bg-[#091a45]' ,src:'/images/ershad.mp4'},
+  { title: 'معرض النجاحات', color: 'bg-[#091a45]' ,src:'/images/exhibtion.mp4'},
   { title: 'خدمات الشركات', color: 'bg-[#c5b68b]',src:'/images/companiesOffer.mp4' },
   // { title: 'عنوان آخر', color: 'bg-[#091a45]' },
   // Add more items or generate dynamically up to 34

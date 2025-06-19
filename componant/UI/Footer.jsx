@@ -13,85 +13,98 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-  <footer className={`bg-NavbarBackground footer  px-4 py-4 ${pathname === "/chooseAccount" ||
-    pathname === "/login" ||
-    pathname === "/registerEmployee" ||
-    pathname === "/registerCompany" ||
-    pathname === "/forgetPassword" ||
-    pathname.includes("/changePassword") ||
-    pathname.includes("/dashboard") ||
-    pathname === "/successChangePassword"
-    ? "hidden"
-    : ""
-    }`}
+    <footer className={`bg-NavbarBackground footer  px-4 py-4 ${pathname === "/chooseAccount" ||
+      pathname === "/login" ||
+      pathname === "/registerEmployee" ||
+      pathname === "/registerCompany" ||
+      pathname === "/forgetPassword" ||
+      pathname.includes("/changePassword") ||
+      pathname.includes("/dashboard") ||
+      pathname === "/successChangePassword"
+      ? "hidden"
+      : ""
+      }`}
+    >
+
+      {/* Waves (optional - can be positioned absolutely if needed) */}
+      <div className="waves">
+        <div className="wave" id="wave1"></div>
+        <div className="wave" id="wave2"></div>
+        <div className="wave" id="wave3"></div>
+        <div className="wave" id="wave4"></div>
+      </div>
+
+      {/* Two-column layout */}
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:gap-[200px] items-start mt-2 border-b border-gray-700">
+
+        {/* Column 1: Logo and Address */}
+        <div className="flex flex-col gap-2">
+          <Image src={logo} alt="logo" className="w-[50px] object-contain" />
+          <p className="text-white text-sm leading-relaxed">
+            نحن إرشاد للموارد البشرية متخصـــصـــون فی مجال التوظیف والتدریب
+            والإرشاد المهنی، کما نتمیز بتقدیم الخدمات الممیزة عبر منصـتنا
+            للشــرکات لمســاعدتهم على المواصلة والنمو فی سوق العمل
+            الســـــــــعودي تماشیآ مع رؤية المملكة 2030
+          </p>
+         <p className="text-white text-sm leading-relaxed mt-1 text-right flex items-center justify-end gap-2">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+     className="h-8 w-8 text-white"
+    fill="currentColor"
+    viewBox="0 0 24 24"
   >
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+  </svg>
+  المملكة العربية السعودية - الخبر 31952 - ص.ب 32348 - حي الندية - طريق الملك عبدالعزيز 9199 - برج الشيخ، الطابق 21
+</p>
 
-    {/* Waves (optional - can be positioned absolutely if needed) */}
-        <div className="waves">
-      <div className="wave" id="wave1"></div>
-      <div className="wave" id="wave2"></div>
-       <div className="wave" id="wave3"></div>
-      <div className="wave" id="wave4"></div>
+
+        </div>
+
+        {/* Column 2: Social Media */}
+        <div className="flex flex-col gap-2 p-8">
+          <h2 className="text-white font-bold text-lg">تابعنا</h2>
+          <ul className="flex gap-5">
+            <li>
+              <a
+                href="https://www.instagram.com/ershad_career?igsh=dnJyd2pvb29la2xu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center"
+              >
+                <FaInstagram size={24} color="white" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/ershadcareer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaXTwitter size={24} color="white" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/ershad-co/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn size={24} color="white" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-    {/* Two-column layout */}
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:gap-[200px] items-start mt-2 border-b border-gray-700">
-
-      {/* Column 1: Logo and Address */}
-      <div className="flex flex-col gap-2">
-        <Image src={logo} alt="logo" className="w-[50px] object-contain" />
-        <p className="text-white text-sm leading-relaxed">
-          نحن إرشاد للموارد البشرية متخصـــصـــون فی مجال التوظیف والتدریب
-          والإرشاد المهنی، کما نتمیز بتقدیم الخدمات الممیزة عبر منصـتنا
-          للشــرکات لمســاعدتهم على المواصلة والنمو فی سوق العمل
-          الســـــــــعودي تماشیآ مع رؤية المملكة 2030
-        </p>
-      </div>
-
-      {/* Column 2: Social Media */}
-      <div className="flex flex-col gap-2 p-8">
-        <h2 className="text-white font-bold text-lg">تابعنا</h2>
-        <ul className="flex gap-5">
-          <li>
-            <a
-              href="https://www.instagram.com/ershad_career?igsh=dnJyd2pvb29la2xu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-            >
-              <FaInstagram size={24} color="white" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/ershadcareer"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaXTwitter size={24} color="white" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/company/ershad-co/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn size={24} color="white" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    {/* Bottom copyright */}
-    {/* <div className="mt-10 border-t border-gray-700 pt-4">
+      {/* Bottom copyright */}
+      {/* <div className="mt-10 border-t border-gray-700 pt-4">
       <p className="text-center text-white text-sm">
         جميع الحقوق محفوظة ارشاد @2024
       </p>
     </div> */}
-  </footer>
-);
+    </footer>
+  );
 
   // return (
 
@@ -114,7 +127,7 @@ export default function Footer() {
   //       <div className="wave" id="wave3"></div>
   //       <div className="wave" id="wave4"></div>
   //     </div>
-     
+
   //           <Image src={logo} alt="logo" className="w-[150px] mt-0" />
 
   //          <p className="lg:w-[45%] text-white">

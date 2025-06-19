@@ -56,7 +56,7 @@ export default function Home() {
       <Header />
       <ZigZagSteps/>
       <UploadYourCv />
-      {/* <OurPartenrs /> */}
+      <OurPartenrs />
       {/* <KnowUs /> */}
       {/* {/* <Services /> */}
       {/* <OffersWork /> */} 
