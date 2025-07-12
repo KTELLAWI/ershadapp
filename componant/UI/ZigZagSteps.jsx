@@ -1,7 +1,19 @@
 "use client";
 
 import React, { forwardRef, useRef } from "react";
+
+import { er1 } from "../../public/images/er1.png";
+import er2 from "../../public/images/er2.png";
+import er3 from "../../public/images/er3.png";
+import er4 from "../../public/images/er4.png";
+import er5 from "../../public/images/er5.png";
+import er6 from "../../public/images/er6.png";
 import robort from "../../public/images/robot1.png"
+import logo from "../../public/images/logo.png"
+
+import r0 from "../../public/images/r0.png";
+import r1 from "../../public/images/r1.png";
+import r2 from "../../public/images/r2.png";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
@@ -11,7 +23,7 @@ const Circle = forwardRef(({ className, children }, ref) => {
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-20 items-center justify-center rounded-full border-2 bg-bgButtonNavbar  p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "relative z-10 flex size-20 items-center justify-center rounded-full border-2 bg-bgButtonNavbar   shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
     >
@@ -44,81 +56,121 @@ export default function AnimatedBeamDemo() {
         <div className="flex flex-col items-start">
           <div className="flex flex-row justify-between">
             <Circle ref={div1Ref}>
-              <Icons.user />
+              {/* <Icons.user /> */}
+              <img src="/images/er1.png" alt="Your description" className="absolute w-[70%] h-[70%] object-contain" />
+
             </Circle>
           </div>
           <h3 className="text-sm font-semibold mt-2">املأ النموذج وارفع<br /> سيرتك الذاتية</h3>
-          <p className="text-xs text-gray-500"></p>
+          <p
+            dir="rtl"
+            className="text-xs  text-right  text-[#D3B472] sm:block"
+          >
+            ابدأ رحلتك عبر تعبئة بياناتك الأساسية<br />ورفع السيرة الذاتية على منصتنا
+          </p>
         </div>
 
         {/* Robot image between div1Ref and div2Ref */}
         <div className="flex justify-center  transform -translate-x-1/4 -translate-y-1/2">
-          <img src="/images/robot1.png" alt="Robot" className="w-[100px] h-[100px]" />
+          <img src="/images/r0.png" alt="Robot" className="w-[100px] h-[100px]" />
         </div>
 
         {/* div2Ref + header/text */}
         <div className="flex flex-col items-end">
           <div className="flex flex-row justify-end">
             <Circle ref={div2Ref}>
-              <Icons.openai />
+              {/* <Icons.openai /> */}
+              <img src="/images/er2.png" alt="Your description" className=" absolute w-[70%] h-[70%] object-contain" />
+
             </Circle>
           </div>
           <h3 className="text-sm font-semibold mt-2 text-right">الذكاء الاصطناعي <br /> يبدأ التحليل</h3>
-          <p className="text-xs text-gray-500 text-right"></p>
+          <p
+            dir=""
+            className="text-xs  text-center text-justify  mt-2 text-[#D3B472] sm:block max-w-[150px]  "
+          >
+            يقوم نظامنا الذكي بتحليل سيرتك الذاتية باستخدام خوارزميات خاصة طورها فريق إنجاز وفقًا لسوق العمل السعودي.
+          </p>
         </div>
 
         {/* div3Ref + header/text */}
         <div className="flex flex-col items-end px-5 ">
           <div className="flex flex-row justify-end">
             <Circle ref={div3Ref} className="mt-[40px]">
-              <Icons.openai />
+              {/* <Icons.openai /> */}
+              <img src="/images/er3.png" alt="Your description" className=" absolute w-[70%] h-[70%] object-contain" />
+
             </Circle>
           </div>
           <div dir="ltr" className="w-[50%] items-end ">
             <h3 className="text-sm font-semibold mt-2 text-left ">عرض سيرتك على الشركات المتعاقدة معنا</h3>
-            <p className="text-xs text-gray-500 text-left"></p>
-          </div>
+            <p
+              dir="ltr"
+              className="text-xs  text-left   mt-2 text-[#D3B472] sm:block max-w-[100px] lg:max-w-[150px]  "
+            >
+              بتم إرسال سيرتك إلى الشركات التي تبحث عن مرشحين بخبرتك، من خلال شبكة شراكاتنا الواسعة </p>          </div>
         </div>
         {/* Robot image between div3Ref and div4Ref */}
-        <div className="flex justify-center transform -translate-x-1/5 translate-y-1/3">
-          <img src="/images/robot1.png" alt="Robot" className="w-[100px] h-[100px]" />
+        <div className=" hidden flex justify-center transform  translate-y-[-1/1]">
+          <img src="/images/r1.png" alt="Robot" className="w-[50px] h-[50px]" />
         </div>
 
         {/* div4Ref + header/text */}
         <div className="flex flex-col items-start px-5">
           <div className="flex flex-row justify-start mt-[-250px]">
             <Circle ref={div4Ref} className="">
-              <Icons.openai />
+              {/* <Icons.openai /> */}
+              <img src="/images/er4.png" alt="Your description" className=" absolute w-[90%] h-[90%] object-contain" />
+
             </Circle>
           </div>
           <div className="flex flex-col w-[50%] items-start">
             <h3 className="text-sm font-semibold mt-2 break-normal">تصنيف سيرتك ضمن  <br />المسارات   المهنية </h3>
-            <p className="text-xs text-gray-500"></p>
+            <p
+              dir="rtl"
+              className="text-xs text-right   mt-2 text-[#D3B472] sm:block max-w-[100px] lg:max-w-[150px]  "
+            >
+              السيرة تُصنف تلقائيًا حسب المجالات، المهارات، سنوات الخبرة، والمستوى الوظيفي.
+            </p>
           </div>
+        </div>
+        <div className="flex justify-center transform -translate-x-1/5 translate-y-1/2">
+          <img src="/images/r2.png" alt="Robot" className="w-[90px] h-[90px]" />
         </div>
 
         {/* div5Ref + header/text */}
         <div className="flex flex-col items-start">
           <div className="flex flex-row justify-start">
             <Circle ref={div5Ref} className="mt-[-50px]">
-              <Icons.openai />
+              {/* <Icons.openai /> */}
+              <img src="/images/er5.png" alt="Your description" className=" absolute w-[90%] h-[90%] object-contain" />
+
             </Circle>
           </div>
           <h3 className="text-sm font-semibold mt-2 whitespace-normal ">تحديث مستمر وربط ذكي <br /> مع الوظائف الجديدة</h3>
-          <p className="text-xs text-gray-500"></p>
+          <p
+            dir=""
+            className="text-xs  text-center text-justify  mt-2 text-[#D3B472] sm:block max-w-[150px]  "
+          >
+            عند كل تحديث في خوارزميات الذكاء أو توفر وظائف جديدة، يعيد النظام التحقق من سيرتك وإعادة عرضها للفرص المناسبة الجديدة. </p>
         </div>
 
         {/* div6Ref - unchanged */}
         <div className="flex flex-col items-end  px-5 text-right whitespace-normal ">
           <div className="flex flex-row justify-end px-5">
             <Circle ref={div6Ref}>
-              <Icons.openai />
+              {/* <Icons.openai /> */}
+              <img src="/images/er6.png" alt="Your description" className=" absolute w-[90%] h-[90%] object-contain" />
+
             </Circle>
           </div>
           <div className="flex flex-col w-[50%] items-start">
             <h3 className="text-sm font-semibold mt-2 text-right break-words whitespace-normal">فرص اكثر ظهور اوسع بدون مجهود إضافي منك</h3>
-            <p dir="rtl" className="text-xs text-gray-500 text-right"></p>
-          </div>
+            <p
+              dir=""
+              className="text-xs  text-center text-justify  mt-2 text-[#D3B472] sm:block max-w-[220px] "
+            >
+              أنت لا تحتاج إلى متابعة... نحن نقوم بذلك نيابة عنك، لنضمن لك الوصول لأفضل الفرص. </p>           </div>
         </div>
       </div>
 

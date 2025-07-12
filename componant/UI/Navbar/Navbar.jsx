@@ -64,8 +64,8 @@ export default function Navbar() {
           {/* <li onClick={() => handleScrollTo("knowUs")}>تعرف علينا</li> */}
           <li onClick={() => {router.push("/ourservice");
             setOpen((e) => !e);
-          }}> خدماتنا</li>
-          <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li>
+          }}> Service</li>
+          {/* <li className="bg-white  font-bold rounded-md text-bgButtonNavbar py-2 px-3" onClick={() => router.push("/pageOfferWork")}> تبحث عن وظيفة</li> */}
           <li onClick={() => router.push("/sendyourcv")} > أرسل سيرتك الذاتية لجهات التوظيف</li>
           </>
           )
@@ -114,9 +114,9 @@ export default function Navbar() {
          }}
         >
           {" "}
-          خدماتنا
+          Service
         </li>
-        <li
+        {/* <li
           className="mr-10 rounded-md py-2 "
           onClick={() => {
             setOpen((e) => !e);
@@ -125,9 +125,9 @@ export default function Navbar() {
         >
           {" "}
           تبحث عن وظيفة
-          {/* <span className=" py-1 px-2 bg-bgButtonNavbar rounded-md text-white">تبحث عن وظيفة</span> */}
+          <span className=" py-1 px-2 bg-bgButtonNavbar rounded-md text-white">تبحث عن وظيفة</span>
 
-        </li>
+        </li> */}
         {/* <li
           className="mr-10 cursor-pointer"
           onClick={() => router.push("/openWork")}
